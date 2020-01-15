@@ -3,36 +3,41 @@ import React from 'react';
 import { Table } from 'antd';
 import 'antd/dist/antd.css';
 
-const dataSource = [
+const data = [
   {
     key: '1',
-    name: 'Mike',
-    age: 32,
-    address: '10 Downing Street',
-  },
-  {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-  },
+    title: 'Use Hooks in a React application ',
+    description: "Provide more text",
+    completed: 'false',   
+  }
 ];
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
+    title: 'Title',
+    dataIndex: 'title',
+    key: 'title',
+    render: (text) => <span>{text}</span>,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'Description',
+    dataIndex: 'description',
+    key: 'description',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Completed',
+    dataIndex: 'completed',
+    key: 'completed',
+  },
+ 
+  {
+    title: 'Action',
+    key: 'action',
+    render: (text, record) => (
+      <span>        
+        <a href="#delete">Delete {record.title}</a>
+      </span>
+    ),
   },
 ];
 
@@ -41,7 +46,7 @@ const columns = [
 function App() {
   return (
     <div className="App">
-     <Table dataSource={dataSource} columns={columns} />;
+     <Table dataSource={data} columns={columns} />;
     </div>
   );
 }
