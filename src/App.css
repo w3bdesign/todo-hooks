@@ -1,3 +1,17 @@
+.App
+{
+max-width:50vw;
+margin: 0 auto;
+margin-top:25px;
+}
+
+.ant-btn { margin-top: 15px;}
+
+
+h3 {
+	text-align: center;
+}
+
 span[role="img"] {
   color: red ;
 }
