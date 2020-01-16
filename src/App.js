@@ -30,22 +30,28 @@ const columns = [
     render: (text, record) => (
       <span>
         <a
+          href="#complete"
+          onClick={() => {
+            alert('You clicked on complete!');
+          }}
+        >
+          <span className="action-v">V</span>
+        </a>
+
+        <a
           href="#delete"
           onClick={() => {
             alert('You clicked on delete!');
           }}
         >
-          <span role="img" aria-label="delete">
-            ❌
-          </span>
+          <span className="action-x">X</span>
         </a>
       </span>
     )
   }
 ];
 
-function App() {
-  // <Table dataSource={data} columns={columns} />;
+function App() {  
 
   const [todos, setTodos] = useState([
     {
@@ -59,19 +65,25 @@ function App() {
   // https://next.ant.design/components/table/#components-table-demo-row-selection
   return (
     <div className="App">
-       <Row type="flex" justify="center">
-       <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-      <Table dataSource={data} columns={columns} />
-      </Col>  
+      <Row type="flex" justify="center">
+        <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <Table dataSource={data} columns={columns} />
+        </Col>
       </Row>
       <Row type="flex" justify="center">
-      <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-        <h3>Add TODO</h3>
-        <Input placeholder="Add TODO" />
-        <Button type="primary" onClick={() => { alert("Du klikket Add");}} block>
-          Add
-        </Button>  
-        </Col>  
+        <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <h3>Add TODO</h3>
+          <Input placeholder="Add TODO" />
+          <Button
+            type="primary"
+            onClick={() => {
+              todos.map(test => console.log(test));
+            }}
+            block
+          >
+            Add
+          </Button>
+        </Col>
       </Row>
     </div>
   );
