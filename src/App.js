@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Input, Button, Row, Col } from 'antd';
+import { Table, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
-
+import TodoForm from "./components/Form/form.component";
 
 const data = [
   {
@@ -34,7 +34,7 @@ const columns = [
         <a
           href="#complete"
           onClick={() => {
-            alert("Complete clicked!")
+            alert('Complete clicked!');
           }}
         >
           <span className="action-v">V</span>
@@ -53,14 +53,11 @@ const columns = [
   }
 ];
 
-function AddTodo({text})
-{
-const [todo, addTodo] = useState("");
+function AddTodo({ text }) {
+  const [todo, addTodo] = useState('');
 }
 
-
-function App() {  
-
+function App() {
   const [todos, setTodos] = useState([
     {
       key: '1',
@@ -70,13 +67,16 @@ function App() {
   ]);
 
   const addTodo = text => {
+    const newTodos = [...todos, text];
+    setTodos(newTodos);
+  };
+
+  const completeTodo = index => {
     const newTodos = [...todos];
-
-  }
-
-  //const testDaniel = todos.map(test => {test});
-  //console.log(testDaniel);
-  // https://next.ant.design/components/table/#components-table-demo-row-selection
+    newTodos[index].completed = 'true';
+    setTodos(newTodos);
+  };
+ 
   return (
     <div className="App">
       <Row type="flex" justify="center">
@@ -86,17 +86,7 @@ function App() {
       </Row>
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <h3>Add TODO</h3>
-          <Input placeholder="Add TODO" />
-          <Button
-            type="primary"
-            onClick={() => {
-              todos.map(test => console.log(test));
-            }}
-            block
-          >
-            Add
-          </Button>
+          <TodoForm />
         </Col>
       </Row>
     </div>
