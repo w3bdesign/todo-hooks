@@ -7,8 +7,7 @@ const data = [
   {
     key: '1',
     title: 'Use Hooks in a React application ',
-    description: 'Provide more text',
-    completed: 'false'
+    completed: 'False'
   }
 ];
 
@@ -18,11 +17,6 @@ const columns = [
     dataIndex: 'title',
     key: 'title',
     render: text => <span>{text}</span>
-  },
-  {
-    title: 'Description',
-    dataIndex: 'description',
-    key: 'description'
   },
   {
     title: 'Completed',
@@ -57,7 +51,7 @@ function App() {
     {
       title: 'Title',
       dataIndex: 'title',
-      key: 'title',      
+      key: 'title'
     }
   ]);
   //const testDaniel = todos.map(test => {test});
@@ -68,11 +62,12 @@ function App() {
       <Table dataSource={data} columns={columns} />
       <br />
       <div className="todo">
-      <h3>Add TODO</h3>
-      <Input placeholder="Add TODO" />
-      <Button type="primary" block>Add</Button>
+        <h3>Add TODO</h3>
+        <Input placeholder="Add TODO" />
+        <Button type="primary" block>
+          Add
+        </Button>
       </div>
-     
     </div>
   );
 }
