@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Input, Button } from 'antd';
+import { Table, Input, Button, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
 const data = [
@@ -59,15 +59,20 @@ function App() {
   // https://next.ant.design/components/table/#components-table-demo-row-selection
   return (
     <div className="App">
+       <Row type="flex" justify="center">
+       <Col xs={24} sm={24} md={24} lg={12} xl={12}>
       <Table dataSource={data} columns={columns} />
-      <br />
-      <div className="todo">
+      </Col>  
+      </Row>
+      <Row type="flex" justify="center">
+      <Col xs={24} sm={24} md={24} lg={12} xl={12}>
         <h3>Add TODO</h3>
         <Input placeholder="Add TODO" />
-        <Button type="primary" block>
+        <Button type="primary" onClick={() => { alert("Du klikket Add");}} block>
           Add
-        </Button>
-      </div>
+        </Button>  
+        </Col>  
+      </Row>
     </div>
   );
 }
