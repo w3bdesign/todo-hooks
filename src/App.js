@@ -3,6 +3,8 @@ import './App.css';
 import { Table, Input, Button, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
+
+
 const data = [
   {
     key: '1',
@@ -32,7 +34,7 @@ const columns = [
         <a
           href="#complete"
           onClick={() => {
-            alert('You clicked on complete!');
+            alert("Complete clicked!")
           }}
         >
           <span className="action-v">V</span>
@@ -51,15 +53,27 @@ const columns = [
   }
 ];
 
+function AddTodo({text})
+{
+const [todo, addTodo] = useState("");
+}
+
+
 function App() {  
 
   const [todos, setTodos] = useState([
     {
-      title: 'Title',
-      dataIndex: 'title',
-      key: 'title'
+      key: '1',
+      title: 'Use Hooks in a React application ',
+      completed: 'False'
     }
   ]);
+
+  const addTodo = text => {
+    const newTodos = [...todos];
+
+  }
+
   //const testDaniel = todos.map(test => {test});
   //console.log(testDaniel);
   // https://next.ant.design/components/table/#components-table-demo-row-selection
