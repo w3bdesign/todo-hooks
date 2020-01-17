@@ -54,10 +54,13 @@ const columns = [
 ];
 
 function AddTodo({ text }) {
+  
   const [todo, addTodo] = useState('');
 }
 
 function App() {
+  const [form, setForm] = useState("");
+
   const [todos, setTodos] = useState([
     {
       key: '1',
@@ -77,6 +80,9 @@ function App() {
     setTodos(newTodos);
   };
  
+  console.log("Update form ....");
+  console.log(form);
+
   return (
     <div className="App">
       <Row type="flex" justify="center">
@@ -85,8 +91,12 @@ function App() {
         </Col>
       </Row>
       <Row type="flex" justify="center">
+      <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <h3>TODO hook:</h3>
+          {}
+        </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm />
+          <TodoForm form={form} setForm={setForm}/>
         </Col>
       </Row>
     </div>
