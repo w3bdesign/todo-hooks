@@ -90,11 +90,7 @@ function App() {
           <Table dataSource={data} columns={columns} />
         </Col>
       </Row>
-      <Row type="flex" justify="center">
-      <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <h3>TODO hook:</h3>
-          {}
-        </Col>
+      <Row type="flex" justify="center">      
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <TodoForm form={form} setForm={setForm}/>
         </Col>
