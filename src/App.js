@@ -3,7 +3,7 @@ import './App.css';
 import { Table, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
-import TodoForm from "./components/Form/form.component";
+import TodoForm from './components/Form/form.component';
 
 const data = [
   {
@@ -53,14 +53,8 @@ const columns = [
   }
 ];
 
-function AddTodo({ text }) {
-  
-  const [todo, addTodo] = useState('');
-}
-
 function App() {
-  const [form, setForm] = useState("");
-
+  const [form, setForm] = useState('');
   const [todos, setTodos] = useState([
     {
       key: '1',
@@ -70,8 +64,8 @@ function App() {
   ]);
 
   const addTodo = text => {
-    const newTodos = [...todos, text];
-    setTodos(newTodos);
+    const newData = [...data, text];
+    setTodos(newData);
   };
 
   const completeTodo = index => {
@@ -79,9 +73,12 @@ function App() {
     newTodos[index].completed = 'true';
     setTodos(newTodos);
   };
- 
-  console.log("Update form ....");
-  console.log(form);
+
+  console.log('Update form ....');  
+  if (form) {
+    console.log(data);
+    console.log(form);
+  }
 
   return (
     <div className="App">
@@ -90,9 +87,9 @@ function App() {
           <Table dataSource={data} columns={columns} />
         </Col>
       </Row>
-      <Row type="flex" justify="center">      
+      <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm form={form} setForm={setForm}/>
+          <TodoForm form={form} setForm={setForm} />
         </Col>
       </Row>
     </div>
