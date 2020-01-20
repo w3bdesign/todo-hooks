@@ -5,14 +5,6 @@ import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
 
-const data = [
-  {
-    key: '1',
-    title: 'Use Hooks in a React application ',
-    completed: 'False'
-  }
-];
-
 const columns = [
   {
     title: 'Title',
@@ -54,8 +46,7 @@ const columns = [
 ];
 
 function App() {
-  const [form, setForm] = useState('');
-  const [todos, setTodos] = useState([
+  const [form, setForm] = useState([
     {
       key: '1',
       title: 'Use Hooks in a React application ',
@@ -63,8 +54,10 @@ function App() {
     }
   ]);
 
-  const addTodo = text => {
-    const newData = [...data, text];
+  const [todos, setTodos] = useState([...form]);
+
+  /*const addTodo = text => {
+    const newData = [...form, text];
     setTodos(newData);
   };
 
@@ -72,11 +65,12 @@ function App() {
     const newTodos = [...todos];
     newTodos[index].completed = 'true';
     setTodos(newTodos);
-  };
+  };*/
 
   console.log('Update form ....');  
-  if (form) {
-    console.log(data);
+  console.log("Todos from App.js ...");
+  console.log(todos)
+  if (form) {    
     console.log(form);
   }
 
@@ -84,12 +78,12 @@ function App() {
     <div className="App">
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <Table dataSource={data} columns={columns} />
+          <Table dataSource={todos} columns={columns} />
         </Col>
       </Row>
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm form={form} setForm={setForm} />
+          <TodoForm form={form} setForm={setForm} todos={todos} setTodos={setTodos} />
         </Col>
       </Row>
     </div>
