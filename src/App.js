@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Row, Col, Popconfirm } from 'antd';
+import { Table, Row, Col, Popconfirm, Typography } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
+
+const { Paragraph } = Typography;
+
+// TODO render a component here instead of a span?
 
 const columns = [
   {
     title: 'Title',
     dataIndex: 'title',
     key: 'title',
-    render: text => <span className="text">{text}</span>
+    render: text =>  <Paragraph>{text}</Paragraph>
   },
   {
     title: 'Completed',
