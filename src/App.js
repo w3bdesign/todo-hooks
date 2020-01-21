@@ -8,13 +8,14 @@ import TodoForm from './components/Form/form.component';
 const { Paragraph } = Typography;
 
 // TODO render a component here instead of a span?
+// Replaced <span> {text} </span with this: https://ant.design/components/typography/
 
 const columns = [
   {
     title: 'Title',
     dataIndex: 'title',
     key: 'title',
-    render: text =>  <Paragraph>{text}</Paragraph>
+    render: text => <Paragraph>{text}</Paragraph>
   },
   {
     title: 'Completed',
@@ -25,35 +26,33 @@ const columns = [
   {
     title: 'Action',
     key: 'action',
-    dataIndex: "action",
+    dataIndex: 'action',
     render: (text, record) => (
       <span>
         <a
-          href="#complete"          
-          onClick={(e) => {
-            
-            
+          href="#complete"
+          onClick={e => {
             alert('Complete clicked!');
-            console.log(record.key)
-            
+            console.log(record.key);
+            // Record.key = row index
             //e.currentTarget.setAttribute("completed", true);
-           
           }}
         >
           <span className="action-v">V</span>
         </a>
 
-       
-        
-          <Popconfirm
-    title="Are you sure you want to delete this task?"   
-    onConfirm={() => {alert("You clicked yes to delete!") }} 
-    okText="Yes"
-    cancelText="No"
-  > 
-    <a href="#delete"><span className="action-x">X</span></a>
-  </Popconfirm>
-        
+        <Popconfirm
+          title="Are you sure you want to delete this task?"
+          onConfirm={() => {
+            alert('You clicked yes to delete!');
+          }}
+          okText="Yes"
+          cancelText="No"
+        >
+          <a href="#delete">
+            <span className="action-x">X</span>
+          </a>
+        </Popconfirm>
       </span>
     )
   }
@@ -81,10 +80,10 @@ function App() {
     setTodos(newTodos);
   };*/
 
-  console.log('Update form ....');  
-  console.log("Todos from App.js ...");
-  console.log(todos)
-  if (form) {    
+  console.log('Update form ....');
+  console.log('Todos from App.js ...');
+  console.log(todos);
+  if (form) {
     console.log(form);
   }
 
@@ -97,7 +96,12 @@ function App() {
       </Row>
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm form={form} setForm={setForm} todos={todos} setTodos={setTodos} />
+          <TodoForm
+            form={form}
+            setForm={setForm}
+            todos={todos}
+            setTodos={setTodos}
+          />
         </Col>
       </Row>
     </div>
