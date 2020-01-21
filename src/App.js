@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Row, Col } from 'antd';
+import { Table, Row, Col, Popconfirm } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
@@ -10,7 +10,7 @@ const columns = [
     title: 'Title',
     dataIndex: 'title',
     key: 'title',
-    render: text => <span>{text}</span>
+    render: text => <span className="text">{text}</span>
   },
   {
     title: 'Completed',
@@ -21,25 +21,35 @@ const columns = [
   {
     title: 'Action',
     key: 'action',
+    dataIndex: "action",
     render: (text, record) => (
       <span>
         <a
-          href="#complete"
-          onClick={() => {
+          href="#complete"          
+          onClick={(e) => {
+            
+            
             alert('Complete clicked!');
+            console.log(record.key)
+            
+            //e.currentTarget.setAttribute("completed", true);
+           
           }}
         >
           <span className="action-v">V</span>
         </a>
 
-        <a
-          href="#delete"
-          onClick={() => {
-            alert('You clicked on delete!');
-          }}
-        >
-          <span className="action-x">X</span>
-        </a>
+       
+        
+          <Popconfirm
+    title="Are you sure you want to delete this task?"   
+    onConfirm={() => {alert("You clicked yes to delete!") }} 
+    okText="Yes"
+    cancelText="No"
+  > 
+    <a href="#delete">Delete</a>
+  </Popconfirm>
+        
       </span>
     )
   }
