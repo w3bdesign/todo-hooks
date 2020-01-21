@@ -47,7 +47,7 @@ const columns = [
     okText="Yes"
     cancelText="No"
   > 
-    <a href="#delete">Delete</a>
+    <a href="#delete"><span className="action-x">X</span></a>
   </Popconfirm>
         
       </span>
