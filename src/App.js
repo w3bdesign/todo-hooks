@@ -37,6 +37,7 @@ function App() {
   const [todos, setTodos] = useState([...form]);
 
   // TODO Add conditional rendering in render function
+  // TODO Modify Completed state in onClick handler
 
   const columns = [
     {
