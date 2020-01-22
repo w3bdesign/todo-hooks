@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input, Button, Form } from 'antd';
+import { Input, Button, Form, Icon } from 'antd';
 
 // We destructure the props sent from the parent
 
@@ -39,6 +39,7 @@ function TodoForm({ form, setForm, todos, setTodos }) {
 
       <Form.Item name="todotext">
         <Input
+         prefix={<Icon type="tags" className="icon" />}
           onChange={e => {
             // Set state through hooks.
             // Call function though parent component.

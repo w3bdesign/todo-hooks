@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Row, Col, Popconfirm, Typography } from 'antd';
+import { Table, Row, Col, Popconfirm, Typography, notification } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
@@ -9,6 +9,13 @@ const { Paragraph } = Typography;
 
 // TODO render a component here instead of a span?
 // Replaced <span> {text} </span with this: https://ant.design/components/typography/
+
+const openNotification = (placement, text) => {
+  notification.info({
+    message: `${text}`,    
+    placement,
+  });
+};
 
 const columns = [
   {
@@ -32,8 +39,11 @@ const columns = [
         <a
           href="#complete"
           onClick={e => {
-            alert('Complete clicked!');
+            openNotification('bottomLeft', "TODO added");
             console.log(record.key);
+            console.log('Text:');
+            console.log(text);
+
             // Record.key = row index
             //e.currentTarget.setAttribute("completed", true);
           }}
@@ -44,7 +54,7 @@ const columns = [
         <Popconfirm
           title="Are you sure you want to delete this task?"
           onConfirm={() => {
-            alert('You clicked yes to delete!');
+            openNotification('bottomLeft', "TODO deleted");
           }}
           okText="Yes"
           cancelText="No"
