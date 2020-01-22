@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Row, Col, Popconfirm, Typography, notification, Icon } from 'antd';
+import {
+  Table,
+  Row,
+  Col,
+  Popconfirm,
+  Typography,
+  notification,
+  Icon
+} from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
@@ -12,8 +20,8 @@ const { Paragraph } = Typography;
 
 const openNotification = (placement, text) => {
   notification.info({
-    message: `${text}`,    
-    placement,
+    message: `${text}`,
+    placement
   });
 };
 
@@ -39,28 +47,24 @@ const columns = [
         <a
           href="#complete"
           onClick={e => {
-            openNotification('bottomLeft', "TODO added");
+            openNotification('bottomLeft', 'TODO completed');
             console.log(record.key);
-            console.log('Text:');
-            console.log(text);
-
             // Record.key = row index
-            //e.currentTarget.setAttribute("completed", true);
           }}
         >
-          <Icon style={{"fontSize": "1.5em", "width":"50px"}}  type="check" />
+          <Icon style={{ fontSize: '1.5em', width: '50px' }} type="check" />
         </a>
 
         <Popconfirm
           title="Are you sure you want to delete this task?"
           onConfirm={() => {
-            openNotification('bottomLeft', "TODO deleted");
+            openNotification('bottomLeft', 'TODO deleted');
           }}
           okText="Yes"
           cancelText="No"
         >
           <a href="#delete">
-          <Icon style={{"fontSize": "1.5em", "width":"50px"}}  type="close" />
+            <Icon style={{ fontSize: '1.5em', width: '50px' }} type="close" />
           </a>
         </Popconfirm>
       </span>
