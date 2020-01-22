@@ -36,12 +36,14 @@ function App() {
 
   const [todos, setTodos] = useState([...form]);
 
+  // TODO Add conditional rendering in render function
+
   const columns = [
     {
       title: 'Title',
       dataIndex: 'title',
       key: 'title',
-      render: text=> <Paragraph>{text}</Paragraph>
+      render: text => <Paragraph>{text}</Paragraph>
     },
     {
       title: 'Completed',
