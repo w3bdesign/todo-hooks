@@ -25,8 +25,6 @@ const openNotification = (placement, text) => {
   });
 };
 
-
-
 function App() {
   const [form, setForm] = useState([
     {
@@ -43,14 +41,14 @@ function App() {
       title: 'Title',
       dataIndex: 'title',
       key: 'title',
-      render: text => <Paragraph>{text}</Paragraph>
+      render: text=> <Paragraph>{text}</Paragraph>
     },
     {
       title: 'Completed',
       dataIndex: 'completed',
       key: 'completed'
     },
-  
+
     {
       title: 'Action',
       key: 'action',
@@ -67,7 +65,7 @@ function App() {
           >
             <Icon style={{ fontSize: '1.5em', width: '50px' }} type="check" />
           </a>
-  
+
           <Popconfirm
             title="Are you sure you want to delete this task?"
             onConfirm={() => {
