@@ -25,52 +25,7 @@ const openNotification = (placement, text) => {
   });
 };
 
-const columns = [
-  {
-    title: 'Title',
-    dataIndex: 'title',
-    key: 'title',
-    render: text => <Paragraph>{text}</Paragraph>
-  },
-  {
-    title: 'Completed',
-    dataIndex: 'completed',
-    key: 'completed'
-  },
 
-  {
-    title: 'Action',
-    key: 'action',
-    dataIndex: 'action',
-    render: (text, record) => (
-      <span>
-        <a
-          href="#complete"
-          onClick={e => {
-            openNotification('bottomLeft', 'TODO completed');
-            console.log(record.key);
-            // Record.key = row index
-          }}
-        >
-          <Icon style={{ fontSize: '1.5em', width: '50px' }} type="check" />
-        </a>
-
-        <Popconfirm
-          title="Are you sure you want to delete this task?"
-          onConfirm={() => {
-            openNotification('bottomLeft', 'TODO deleted');
-          }}
-          okText="Yes"
-          cancelText="No"
-        >
-          <a href="#delete">
-            <Icon style={{ fontSize: '1.5em', width: '50px' }} type="close" />
-          </a>
-        </Popconfirm>
-      </span>
-    )
-  }
-];
 
 function App() {
   const [form, setForm] = useState([
@@ -82,6 +37,53 @@ function App() {
   ]);
 
   const [todos, setTodos] = useState([...form]);
+
+  const columns = [
+    {
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title',
+      render: text => <Paragraph>{text}</Paragraph>
+    },
+    {
+      title: 'Completed',
+      dataIndex: 'completed',
+      key: 'completed'
+    },
+  
+    {
+      title: 'Action',
+      key: 'action',
+      dataIndex: 'action',
+      render: (text, record) => (
+        <span>
+          <a
+            href="#complete"
+            onClick={e => {
+              openNotification('bottomLeft', 'TODO completed');
+              console.log(record.key);
+              // Record.key = row index
+            }}
+          >
+            <Icon style={{ fontSize: '1.5em', width: '50px' }} type="check" />
+          </a>
+  
+          <Popconfirm
+            title="Are you sure you want to delete this task?"
+            onConfirm={() => {
+              openNotification('bottomLeft', 'TODO deleted');
+            }}
+            okText="Yes"
+            cancelText="No"
+          >
+            <a href="#delete">
+              <Icon style={{ fontSize: '1.5em', width: '50px' }} type="close" />
+            </a>
+          </Popconfirm>
+        </span>
+      )
+    }
+  ];
 
   /*const addTodo = text => {
     const newData = [...form, text];
