@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Table, Row, Col, Popconfirm, Typography, notification } from 'antd';
+import { Table, Row, Col, Popconfirm, Typography, notification, Icon } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
@@ -48,7 +48,7 @@ const columns = [
             //e.currentTarget.setAttribute("completed", true);
           }}
         >
-          <span className="action-v">V</span>
+          <Icon style={{"fontSize": "1.5em", "width":"50px"}}  type="check" />
         </a>
 
         <Popconfirm
@@ -60,7 +60,7 @@ const columns = [
           cancelText="No"
         >
           <a href="#delete">
-            <span className="action-x">X</span>
+          <Icon style={{"fontSize": "1.5em", "width":"50px"}}  type="close" />
           </a>
         </Popconfirm>
       </span>
