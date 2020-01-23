@@ -28,7 +28,7 @@ const openNotification = (placement, text) => {
 function App() {
   const [form, setForm] = useState([
     {
-      key: '1',
+      key: 0,
       title: 'Use Hooks in a React application ',
       completed: 'False'
     }
@@ -49,12 +49,17 @@ function App() {
       title: 'Title',
       dataIndex: 'title',
       key: 'title',
-      render: text => <Paragraph>{text}</Paragraph>
+      render: (text, record) => (
+        <Paragraph className={record.key}>{text}</Paragraph>
+      )
     },
     {
       title: 'Completed',
       dataIndex: 'completed',
-      key: 'completed'
+      key: 'completed',
+      render: (text, record) => (
+        <Paragraph>{text}</Paragraph>
+      )
     },
 
     {
@@ -67,28 +72,21 @@ function App() {
             href="#complete"
             onClick={e => {
               openNotification('bottomLeft', 'TODO completed');
-              console.log(record.key);
-              console.log(todos);
-
-              //console.log(newItems[record.key]);
-              /*const newTodo = [
-                ...todos.slice(0, 0),
-                "Testing", 
-                ...todos.slice(1)
-              ]
-              setTodos(...todos, { title: newTodo })*/
 
               // https://www.robinwieruch.de/react-state-array-add-update-remove
               // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
-              setTodos([
-                {
-                  key: '1',
-                  title: 'Test modifying state',
-                  completed: 'False'
-                }
-              ]);
 
-              // Record.key = row index
+              setTodos(laststate => {
+                console.log(laststate);
+                const list = laststate.map((value, index) => {
+                  return {
+                    key: index,
+                    title: value.title,
+                    completed: 'True'
+                  };
+                });
+                return list;
+              });
             }}
           >
             <Icon style={{ fontSize: '1.5em', width: '50px' }} type="check" />
@@ -98,6 +96,7 @@ function App() {
             title="Are you sure you want to delete this task?"
             onConfirm={() => {
               openNotification('bottomLeft', 'TODO deleted');
+              // https://www.robinwieruch.de/react-state-array-add-update-remove
             }}
             okText="Yes"
             cancelText="No"
