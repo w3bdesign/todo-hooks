@@ -39,6 +39,11 @@ function App() {
   // TODO Add conditional rendering in render function
   // TODO Modify Completed state in onClick handler
 
+  // render: text => <Paragraph>{text}</Paragraph>
+
+  console.log("Todos:");
+  console.log(todos);
+
   const columns = [
     {
       title: 'Title',
@@ -63,6 +68,28 @@ function App() {
             onClick={e => {
               openNotification('bottomLeft', 'TODO completed');
               console.log(record.key);
+              console.log(todos);
+
+              //console.log(newItems[record.key]);
+              /*const newTodo = [
+                ...todos.slice(0, 0),
+                "Testing", 
+                ...todos.slice(1)
+              ]
+              setTodos(...todos, { title: newTodo })*/
+
+
+              setTodos([
+                {
+                  key: '1',
+                  title: 'Test modifying state',
+                  completed: 'False'
+                }
+              ]);
+              
+
+
+
               // Record.key = row index
             }}
           >

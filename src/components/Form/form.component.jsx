@@ -18,7 +18,7 @@ function TodoForm({ form, setForm, todos, setTodos }) {
         // We have access to the form hook value here
         e.preventDefault();
 
-        //setForm(...form, e.target.value);
+       
         console.log('Logging value after form submit: ');
         console.log(form);
         console.log('Todos length');
