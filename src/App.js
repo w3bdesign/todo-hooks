@@ -41,7 +41,7 @@ function App() {
 
   // render: text => <Paragraph>{text}</Paragraph>
 
-  console.log("Todos:");
+  console.log('Todos:');
   console.log(todos);
 
   const columns = [
@@ -78,8 +78,8 @@ function App() {
               ]
               setTodos(...todos, { title: newTodo })*/
 
-// https://www.robinwieruch.de/react-state-array-add-update-remove
-// https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
+              // https://www.robinwieruch.de/react-state-array-add-update-remove
+              // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
               setTodos([
                 {
                   key: '1',
@@ -87,9 +87,6 @@ function App() {
                   completed: 'False'
                 }
               ]);
-              
-
-
 
               // Record.key = row index
             }}
