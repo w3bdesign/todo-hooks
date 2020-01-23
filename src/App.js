@@ -78,7 +78,8 @@ function App() {
               ]
               setTodos(...todos, { title: newTodo })*/
 
-
+// https://www.robinwieruch.de/react-state-array-add-update-remove
+// https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
               setTodos([
                 {
                   key: '1',
