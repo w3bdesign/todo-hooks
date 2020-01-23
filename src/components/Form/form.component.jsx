@@ -5,11 +5,9 @@ import { Input, Button, Form, Icon } from 'antd';
 // We destructure the props sent from the parent
 
 function TodoForm({ form, setForm, todos, setTodos }) {
-  
   return (
     <Form
       onSubmit={e => {
-
         /*
 {
       key: '1',
@@ -19,19 +17,22 @@ function TodoForm({ form, setForm, todos, setTodos }) {
         */
         // We have access to the form hook value here
         e.preventDefault();
-        
+
         //setForm(...form, e.target.value);
         console.log('Logging value after form submit: ');
         console.log(form);
-        
-        setTodos([...todos, {
-          key: "2",
-          title: form,
-          completed: "False"
-        }]);
-        
+        console.log('Todos length');
+        console.log(todos.length);
+        setTodos([
+          ...todos,
+          {
+            title: form,
+            key: todos.length + 1,
+            completed: 'False'
+          }
+        ]);
 
-        console.log("Todos after form submit");
+        console.log('Todos after form submit');
         console.log(todos);
       }}
     >
@@ -39,15 +40,15 @@ function TodoForm({ form, setForm, todos, setTodos }) {
 
       <Form.Item name="todotext">
         <Input
-         prefix={<Icon type="tags" className="icon" />}
+          prefix={<Icon type="tags" className="icon" />}
           onChange={e => {
             // Set state through hooks.
             // Call function though parent component.
             setForm(e.target.value);
-           // console.log("Log after change");
-           // console.log(form)
-           
-           //setForm(form);
+            // console.log("Log after change");
+            // console.log(form)
+
+            //setForm(form);
           }}
         />
       </Form.Item>
