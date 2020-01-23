@@ -34,12 +34,9 @@ function App() {
     }
   ]);
 
+  // TODO Just add initialState to useState below
+
   const [todos, setTodos] = useState([...form]);
-
-  // TODO Add conditional rendering in render function
-  // TODO Modify Completed state in onClick handler
-
-  // render: text => <Paragraph>{text}</Paragraph>
 
   console.log('Todos:');
   console.log(todos);
@@ -57,11 +54,8 @@ function App() {
       title: 'Completed',
       dataIndex: 'completed',
       key: 'completed',
-      render: (text, record) => (
-        <Paragraph>{text}</Paragraph>
-      )
+      render: (text, record) => <Paragraph>{text}</Paragraph>
     },
-
     {
       title: 'Action',
       key: 'action',
@@ -73,12 +67,19 @@ function App() {
             onClick={e => {
               openNotification('bottomLeft', 'TODO completed');
 
-              // https://www.robinwieruch.de/react-state-array-add-update-remove
-              // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react
-
-              setTodos(laststate => {
-                console.log(laststate);
-                const list = laststate.map((value, index) => {
+              // TODO
+              /* Can we refactor to this? 
+              this.setState(prevState => ({
+                jasper: {
+                  // object that we want to update
+                  ...prevState.jasper, // keep all other key-value pairs
+                  name: 'something' // update the value of specific key
+                }
+              }));
+              */
+              // Set TODO to completed. We make sure we keep the title and key intact. We have access to these through value.title and index.
+              setTodos(lastState => {
+                const list = lastState.map((value, index) => {
                   return {
                     key: index,
                     title: value.title,
@@ -96,6 +97,18 @@ function App() {
             title="Are you sure you want to delete this task?"
             onConfirm={() => {
               openNotification('bottomLeft', 'TODO deleted');
+              // TODO Make it so we can delete TODOs. Should we do a splice?
+
+              /*
+              removePeople(e) {
+  var array = [...this.state.people]; // make a separate copy of the array
+  var index = array.indexOf(e.target.value)
+  if (index !== -1) {
+    array.splice(index, 1);
+    this.setState({people: array});
+  }
+},
+              */
               // https://www.robinwieruch.de/react-state-array-add-update-remove
             }}
             okText="Yes"
@@ -109,17 +122,6 @@ function App() {
       )
     }
   ];
-
-  /*const addTodo = text => {
-    const newData = [...form, text];
-    setTodos(newData);
-  };
-
-  const completeTodo = index => {
-    const newTodos = [...todos];
-    newTodos[index].completed = 'true';
-    setTodos(newTodos);
-  };*/
 
   console.log('Update form ....');
   console.log('Todos from App.js ...');
