@@ -1,18 +1,6 @@
-.action-v
-{
-  color: green;
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding:5px;
 
-}
-
-.action-x
-{
-  color: red;
-  font-weight: bold;  
-  font-size: 1.5rem;
-  padding:5px;
+div[name="todotext"] {
+  margin-bottom: 0px;
 }
 
 .App {
