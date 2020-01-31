@@ -13,6 +13,8 @@ import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
 
+//import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+
 const { Paragraph } = Typography;
 
 // TODO render a component here instead of a span?
