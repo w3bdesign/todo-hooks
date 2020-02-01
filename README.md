@@ -7,3 +7,4 @@ Work in progress.
 ## TODO
 
 - Firebase and Firestore
+- Clean up and refactor code
