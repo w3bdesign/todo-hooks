@@ -43,6 +43,22 @@ function App() {
     setTodos(filteredTodos);
   };
 
+  const handleConfirm = key => {
+    // TODO Implement this
+    console.log("Complete!");
+
+    /*
+    const newData = [...this.state.dataSource];
+    const index = newData.findIndex(item => row.key === item.key);
+    const item = newData[index];
+    newData.splice(index, 1, {
+      ...item,
+      ...row
+    });
+    this.setState({ dataSource: newData });
+    */
+  };
+
   const columns = [
     {
       title: 'Title',
@@ -59,7 +75,21 @@ function App() {
       render: (text, _) => <Paragraph>{text}</Paragraph>
     },
     {
-      title: 'Delete',
+      title: 'Action',
+      key: 'complete',
+      dataIndex: 'complete',
+      render: (_, record) =>
+        todos.length >= 1 ? (
+          <Popconfirm
+            title="Not implemented yet ...."
+            onConfirm={() => handleConfirm(record.key)}
+          >
+            <a href="#confirm">Confirm</a>
+          </Popconfirm>
+        ) : null
+    },
+    {
+      title: 'Action',
       key: 'delete',
       dataIndex: 'delete',
       render: (_, record) =>
