@@ -29,33 +29,21 @@ const openNotification = (placement, text) => {
 
 function App() {
   const [form, setForm] = useState([
-    
     {
       key: 0,
       title: 'Use Hooks in a React application ',
       completed: 'False'
     }
-  ]); 
+  ]);
 
   const [todos, setTodos] = useState([...form]);
 
   const handleDelete = key => {
-    console.log("Handle delete!");
-    console.log(key);
-    //const dataSource = [...todos];
-    //setTodos({ dataSource: todos.filter(item => item.key !== key) });
-    console.log(todos.filter(item => item.key !== key));
-    
+    const filteredTodos = todos.filter(item => item.key !== key);
+    setTodos(filteredTodos);
   };
 
-
-  console.log('Todos:');
-  console.log(todos);
-
-  console.log("Length er 0?");
-  console.log(todos.length);
- 
-  const columns =  [
+  const columns = [
     {
       title: 'Title',
       dataIndex: 'title',
@@ -75,15 +63,16 @@ function App() {
       key: 'delete',
       dataIndex: 'delete',
       render: (_, record) =>
-          todos.length > 1 ? (
-            <Popconfirm title="Are you sure you want to delete?" onConfirm={() => handleDelete(record.key)}>
-              <a href="#delete">Delete</a>
-            </Popconfirm>
-          ) : null,
-      
+        todos.length >= 1 ? (
+          <Popconfirm
+            title="Are you sure you want to delete?"
+            onConfirm={() => handleDelete(record.key)}
+          >
+            <a href="#delete">Delete</a>
+          </Popconfirm>
+        ) : null
     }
   ];
-
 
   console.log('Update form ....');
   console.log('Todos from App.js ...');

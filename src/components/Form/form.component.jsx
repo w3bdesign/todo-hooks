@@ -11,22 +11,16 @@ function TodoForm({ form, setForm, todos, setTodos }) {
         // We have access to the form hook value here
         e.preventDefault();
          console.log("Todos fra komponent:");
-         console.log(todos);
-       // const  { count, dataSource } = todos;
+         console.log(todos);   
 
-        /*setTodos({
-          dataSource: [...todos, form],
-          count: count + 1,
-        });*/
-
-        /*setTodos([
+        setTodos([
           ...todos,
           {
             title: form,
             key: todos.length + 1,
             completed: 'False'
           }
-        ]);*/
+        ]);
 
 
 
