@@ -28,12 +28,12 @@ const openNotification = (placement, text) => {
 };
 
 function App() {
-  const [form, setForm] = useState([
-    {
+  const [form, setForm] = useState([{key: 0}
+    /*{
       key: 0,
       title: 'Use Hooks in a React application ',
       completed: 'False'
-    }
+    }*/
   ]);
 
   // TODO Just add initialState to useState below
@@ -64,6 +64,7 @@ function App() {
       dataIndex: 'action',
       render: (text, record) => (
         <span>
+         
           <a
             href="#complete"
             onClick={e => {
@@ -98,8 +99,39 @@ function App() {
           <Popconfirm
             title="Are you sure you want to delete this task?"
             onConfirm={() => {
+              
+              console.log("Delete task ....");
+              console.log(record.key);
+           const newTodos = [...todos];
+           const splicedTodo = newTodos.splice(record.key, 1);
+            console.log("Lengde:");
+            console.log(newTodos.splice(record.key, 1));
+            console.log(splicedTodo);
+
+           
+
+           // console.log(splicedTodo.length);
+            if (splicedTodo.length === 0)
+            {
+              console.log("Length is 0!");
+/*setTodos([
+  {
+    key: 0,
+    title: 'No TODOs added',
+    completed: 'False'
+  }
+]);*/
+
+            }
+            console.log(splicedTodo);
+           // setTodos([...todos], {splicedTodo} );
+           
+           
+
+
               openNotification('bottomLeft', 'TODO deleted');
               // TODO Make it so we can delete TODOs. Should we do a splice?
+
 
               /*
               removePeople(e) {
