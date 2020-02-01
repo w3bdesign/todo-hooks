@@ -8,21 +8,9 @@ function TodoForm({ form, setForm, todos, setTodos }) {
   return (
     <Form
       onSubmit={e => {
-        /*
-{
-      key: '1',
-      title: 'Use Hooks in a React application ',
-      completed: 'False'
-    }
-        */
         // We have access to the form hook value here
         e.preventDefault();
 
-       
-        console.log('Logging value after form submit: ');
-        console.log(form);
-        console.log('Todos length');
-        console.log(todos.length);
         setTodos([
           ...todos,
           {
@@ -42,13 +30,8 @@ function TodoForm({ form, setForm, todos, setTodos }) {
         <Input
           prefix={<Icon type="tags" className="icon" />}
           onChange={e => {
-            // Set state through hooks.
-            // Call function though parent component.
+            // Set state through hooks. Call function though parent component.
             setForm(e.target.value);
-            // console.log("Log after change");
-            // console.log(form)
-
-            //setForm(form);
           }}
         />
       </Form.Item>
