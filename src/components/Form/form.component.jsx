@@ -18,9 +18,7 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
           ...todos,
           {
             title: form,
-            //key: todos.length + 1,
             key: todos.length,
-            //key: uniqueID,
             dataIndex: uniqueID
           }
         ]);
