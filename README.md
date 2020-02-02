@@ -9,3 +9,6 @@ Work in progress.
 - Firebase and Firestore
 - Clean up and refactor code
 - Bug testing and more testing
+- BUG: Remove entry from completed after deleted
+- BUG: Ensure key is always unique
+

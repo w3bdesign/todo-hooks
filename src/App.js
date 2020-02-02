@@ -40,8 +40,8 @@ function App() {
     setTodos(filteredTodos);
 
     const completedToRemove = [...completed];
-    completedToRemove.slice(key, 1);
-    setCompleted(completedToRemove);
+    completedToRemove.slice(key, 1); // TODO
+    setCompleted(completedToRemove); // TODO
 
     openNotification('bottomLeft', 'TODO deleted');
   };
@@ -65,17 +65,15 @@ function App() {
       dataIndex: 'title',
       key: 'title',
       render: (text, record) => {
-        if (typeof completed[record.key] !== 'undefined') {
+        // TODO
+        //  className={ completed[record.key].completed === 'true' ? 'true' : 'false' }
+        //if (typeof completed[record.key] !== 'undefined') {
           return (
-            <Paragraph
-              className={
-                completed[record.key].completed === 'true' ? 'true' : 'false'
-              }
-            >              
+            <Paragraph>
               {text}
             </Paragraph>
           );
-        }
+        //}
       }
     },
     {

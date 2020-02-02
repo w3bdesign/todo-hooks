@@ -11,17 +11,27 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
       onSubmit={e => {
         // We have access to the form hook value here
         e.preventDefault();
-        const uniqueID = uuid.v4();
-        console.log('Adding ...');
-        console.log(uniqueID);
-        setTodos([
+        const uniqueID = uuid.v4();  
+        
+        // key = todos.length
+        const addTodo = [...todos];
+        addTodo.push({
+          key: uniqueID,
+          title: form, 
+          dataIndex: uniqueID
+        });
+        setTodos(addTodo);
+        
+        /*setTodos([
           ...todos,
           {
-            title: form,
-            key: todos.length,
+            key: uniqueID,
+            title: form,            
             dataIndex: uniqueID
           }
-        ]);
+        ]);*/
+
+        console.log(todos);
 
         const tempComplete = [...completed];
 
