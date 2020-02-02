@@ -8,4 +8,4 @@ Work in progress.
 
 - Firebase and Firestore
 - Clean up and refactor code
-- Finish complete
+- Bug testing and removal of console logs
