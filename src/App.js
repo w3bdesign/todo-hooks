@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import {
-  Table,
-  Row,
-  Col,
-  Popconfirm,
-  Typography,
-  notification,
-  Icon
-} from 'antd';
+import { Table, Row, Col, Popconfirm, Typography, notification } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
@@ -17,46 +9,39 @@ import TodoForm from './components/Form/form.component';
 
 const { Paragraph } = Typography;
 
-// TODO render a component here instead of a span?
-// Replaced <span> {text} </span with this: https://ant.design/components/typography/
-
-const openNotification = (placement, text) => {
-  notification.info({
-    message: `${text}`,
-    placement
-  });
-};
-
 function App() {
+  // Add a default TODO when loading the site
   const [form, setForm] = useState([
     {
-      key: 0,
-      title: 'Use Hooks in a React application ',
-      completed: 'False'
+      key: 1,
+      title: 'Use Hooks in a React application'
     }
   ]);
 
   const [todos, setTodos] = useState([...form]);
+  const [completed, setCompleted] = useState([{ key: 1, completed: 'false' }]);
+
+  const openNotification = (placement, text) => {
+    notification.info({
+      message: `${text}`,
+      placement
+    });
+  };
 
   const handleDelete = key => {
     const filteredTodos = todos.filter(item => item.key !== key);
     setTodos(filteredTodos);
+    console.log("We are deleting: ");
+    console.log(key);
+    setCompleted({ key: key, completed: 'false' });
+    openNotification("bottomLeft", "TODO deleted");
   };
 
-  const handleConfirm = key => {
-    // TODO Implement this
-    console.log("Complete!");
-
-    /*
-    const newData = [...this.state.dataSource];
-    const index = newData.findIndex(item => row.key === item.key);
-    const item = newData[index];
-    newData.splice(index, 1, {
-      ...item,
-      ...row
-    });
-    this.setState({ dataSource: newData });
-    */
+  const handleComplete = key => {
+    console.log("We are completing: ");
+    console.log(key);
+    setCompleted({ key: key, completed: 'true' });
+    openNotification("bottomLeft", "TODO completed");
   };
 
   const columns = [
@@ -65,51 +50,32 @@ function App() {
       dataIndex: 'title',
       key: 'title',
       render: (text, record) => (
-        <Paragraph className={record.key}>{text}</Paragraph>
+        <Paragraph className={record.key === completed.key ? 'true' : 'false'}>
+          {text}
+        </Paragraph>
       )
     },
     {
-      title: 'Completed',
-      dataIndex: 'completed',
-      key: 'completed',
-      render: (text, _) => <Paragraph>{text}</Paragraph>
-    },
-    {
       title: 'Action',
-      key: 'complete',
-      dataIndex: 'complete',
+      key: 'action',
+      dataIndex: 'action',
       render: (_, record) =>
         todos.length >= 1 ? (
-          <Popconfirm
-            title="Not implemented yet ...."
-            onConfirm={() => handleConfirm(record.key)}
-          >
-            <a href="#confirm">Confirm</a>
-          </Popconfirm>
-        ) : null
-    },
-    {
-      title: 'Action',
-      key: 'delete',
-      dataIndex: 'delete',
-      render: (_, record) =>
-        todos.length >= 1 ? (
-          <Popconfirm
-            title="Are you sure you want to delete?"
-            onConfirm={() => handleDelete(record.key)}
-          >
-            <a href="#delete">Delete</a>
-          </Popconfirm>
+          <>
+            <a href="#complete" onClick={() => handleComplete(record.key)}>
+              Complete |
+            </a>
+            |
+            <Popconfirm
+              title="Are you sure you want to delete?"
+              onConfirm={() => handleDelete(record.key)}
+            >
+              <a href="#delete"> Delete</a>
+            </Popconfirm>
+          </>
         ) : null
     }
   ];
-
-  console.log('Update form ....');
-  console.log('Todos from App.js ...');
-  console.log(todos);
-  if (form) {
-    console.log(form);
-  }
 
   return (
     <div className="App">

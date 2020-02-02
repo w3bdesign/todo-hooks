@@ -1,4 +1,4 @@
-div[name="todotext"] {
+div[name='todotext'] {
   margin-bottom: 0px;
 }
 
@@ -16,4 +16,8 @@ h3 {
 
 span[role='img'] {
   color: red;
+}
+
+.true {
+  text-decoration: line-through;
 }

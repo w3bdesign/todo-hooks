@@ -3,33 +3,24 @@ import React from 'react';
 import { Input, Button, Form, Icon } from 'antd';
 
 // We destructure the props sent from the parent
-
 function TodoForm({ form, setForm, todos, setTodos }) {
   return (
     <Form
       onSubmit={e => {
         // We have access to the form hook value here
         e.preventDefault();
-         console.log("Todos fra komponent:");
-         console.log(todos);   
-
+        console.log("Adding ...");
+        console.log(todos.length + 1);
         setTodos([
           ...todos,
           {
             title: form,
-            key: todos.length + 1,
-            completed: 'False'
+            key: todos.length + 1
           }
         ]);
-
-
-
-        console.log('Todos after form submit');
-        console.log(todos);
       }}
     >
       <h3>Add TODO</h3>
-
       <Form.Item name="todotext">
         <Input
           prefix={<Icon type="tags" className="icon" />}
@@ -47,5 +38,4 @@ function TodoForm({ form, setForm, todos, setTodos }) {
   );
 }
 
-//export default TodoForm;
 export default Form.create()(TodoForm);
