@@ -11,6 +11,7 @@ More features will be added in a near future.
 - Add and delete TODOs
 - Complete TODOs
 - Uuid for unique React key identifier
+- Pagination (multiple pages) for table
 
 ## TODO
 
