@@ -17,7 +17,7 @@ function App() {
   const [form, setForm] = useState([
     {
       key: uniqueID,
-      title: 'Use Hooks in a React application',
+      title: 'Use Hooks in a React application (Default TODO)',
       dataIndex: 0
     }
   ]);
@@ -40,26 +40,35 @@ function App() {
 
   const handleDelete = (key, dataindex) => {
     const filteredTodos = todos.filter(item => item.key !== key);
-
     setTodos(filteredTodos);
 
     const completedToRemove = [...completed];
-    completedToRemove.slice(dataindex, 1);
-    setCompleted(completedToRemove);
 
+    completedToRemove.splice(dataindex, 1, {
+      key: key,
+      dataindex: dataindex,
+      completed: 'false'
+    });
+
+    setCompleted(completedToRemove);
     openNotification('bottomLeft', 'TODO deleted');
   };
 
   const handleComplete = (key, dataindex) => {
-    const messages = [...completed];
+    // We need to search for the element by key (uniqueID) in completed array and return the index
+    // This way we can be sure we complete the correct item
 
-    messages.splice(dataindex, 1, {
+    const findMe = element => element.key === key;
+    const searchCompleted = completed.findIndex(findMe);
+
+    // We keep an array of completed TODOs and store the unique key (from uniqueID)
+    const messages = [...completed];
+    messages.splice(searchCompleted, 1, {
       key: key,
       dataindex: dataindex,
       completed: 'true'
     });
     setCompleted(messages);
-
     openNotification('bottomLeft', 'TODO completed');
   };
 
@@ -69,18 +78,19 @@ function App() {
       dataIndex: 'title',
       key: 'title',
       render: (text, record) => {
+        // Search for key (uniqueID) in completed TODOs array
+        const findMe = element => element.key === record.key;
+        const foundCompleted = completed.find(findMe) ?? 'false';
         return (
           <Paragraph
             className={
-              completed[record.dataIndex].completed === 'true'
-                ? 'true'
-                : 'false'
+              // Display text-decoration: line-through if TODO is completed (true)
+              foundCompleted.completed === 'true' ? 'true' : 'false'
             }
           >
-            {text}{' '}
+            {text}
           </Paragraph>
         );
-        //}
       }
     },
     {
@@ -100,8 +110,8 @@ function App() {
               title="Are you sure you want to delete?"
               onConfirm={() => handleDelete(record.key, record.dataIndex)}
             >
-              <a href="#delete"> Delete </a>{' '}
-            </Popconfirm>{' '}
+              <a href="#delete"> Delete </a>
+            </Popconfirm>
           </>
         ) : null
     }
@@ -111,9 +121,9 @@ function App() {
     <div className="App">
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <Table dataSource={todos} columns={columns} />{' '}
-        </Col>{' '}
-      </Row>{' '}
+          <Table dataSource={todos} columns={columns} />
+        </Col>
+      </Row>
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <TodoForm
@@ -123,9 +133,9 @@ function App() {
             setTodos={setTodos}
             completed={completed}
             setCompleted={setCompleted}
-          />{' '}
-        </Col>{' '}
-      </Row>{' '}
+          />
+        </Col>
+      </Row>
     </div>
   );
 }
