@@ -12,6 +12,7 @@ More features will be added in a near future.
 - Complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
+- Polyfills for IE11 support
 
 ## TODO
 
