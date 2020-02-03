@@ -4,10 +4,9 @@ import { Table, Row, Col, Popconfirm, Typography, notification } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
-
 import uuid from 'uuid';
 
-//import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+//import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; //TODO
 
 const { Paragraph } = Typography;
 
