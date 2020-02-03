@@ -16,15 +16,19 @@ function App() {
   const uniqueID = uuid.v4();
   const [form, setForm] = useState([
     {
-      key: 0,
+      key: uniqueID,
       title: 'Use Hooks in a React application',
-      dataIndex: uniqueID
+      dataIndex: 0
     }
   ]);
 
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([
-    { key: 0, dataindex: uniqueID, completed: 'false' }
+    {
+      key: uniqueID,
+      dataindex: 0,
+      completed: 'false'
+    }
   ]);
 
   const openNotification = (placement, text) => {
@@ -40,8 +44,8 @@ function App() {
     setTodos(filteredTodos);
 
     const completedToRemove = [...completed];
-    completedToRemove.slice(key, 1); // TODO
-    setCompleted(completedToRemove); // TODO
+    completedToRemove.slice(dataindex, 1);
+    setCompleted(completedToRemove);
 
     openNotification('bottomLeft', 'TODO deleted');
   };
@@ -49,7 +53,7 @@ function App() {
   const handleComplete = (key, dataindex) => {
     const messages = [...completed];
 
-    messages.splice(key, 1, {
+    messages.splice(dataindex, 1, {
       key: key,
       dataindex: dataindex,
       completed: 'true'
@@ -65,14 +69,17 @@ function App() {
       dataIndex: 'title',
       key: 'title',
       render: (text, record) => {
-        // TODO
-        //  className={ completed[record.key].completed === 'true' ? 'true' : 'false' }
-        //if (typeof completed[record.key] !== 'undefined') {
-          return (
-            <Paragraph>
-              {text}
-            </Paragraph>
-          );
+        return (
+          <Paragraph
+            className={
+              completed[record.dataIndex].completed === 'true'
+                ? 'true'
+                : 'false'
+            }
+          >
+            {text}{' '}
+          </Paragraph>
+        );
         //}
       }
     },
@@ -89,13 +96,12 @@ function App() {
             >
               Complete |
             </a>
-            |
             <Popconfirm
               title="Are you sure you want to delete?"
               onConfirm={() => handleDelete(record.key, record.dataIndex)}
             >
-              <a href="#delete"> Delete</a>
-            </Popconfirm>
+              <a href="#delete"> Delete </a>{' '}
+            </Popconfirm>{' '}
           </>
         ) : null
     }
@@ -105,9 +111,9 @@ function App() {
     <div className="App">
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <Table dataSource={todos} columns={columns} />
-        </Col>
-      </Row>
+          <Table dataSource={todos} columns={columns} />{' '}
+        </Col>{' '}
+      </Row>{' '}
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <TodoForm
@@ -117,9 +123,9 @@ function App() {
             setTodos={setTodos}
             completed={completed}
             setCompleted={setCompleted}
-          />
-        </Col>
-      </Row>
+          />{' '}
+        </Col>{' '}
+      </Row>{' '}
     </div>
   );
 }

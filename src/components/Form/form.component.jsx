@@ -18,7 +18,7 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
         addTodo.push({
           key: uniqueID,
           title: form, 
-          dataIndex: uniqueID
+          dataIndex: todos.length
         });
         setTodos(addTodo);
         
@@ -36,8 +36,8 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
         const tempComplete = [...completed];
 
         tempComplete.push({
-          key: todos.length,
-          dataindex: uniqueID,
+          key: uniqueID,
+          dataindex: todos.length,
           completed: 'false'
         });
 
