@@ -2,13 +2,14 @@
 
 # React TODO with Hooks
 
-Work in progress.
+Features:
+
+- Ant Design with the following components: able, Row, Col, Popconfirm, Typography, Popup notification
+- React hooks (useState)
+- Add and delete TODOs
+- Complete TODOs
+- Uuid for unique React key identifier
 
 ## TODO
 
-- Firebase and Firestore
-- Clean up and refactor code
-- Bug testing and more testing
-- BUG: Remove entry from completed after deleted
-- BUG: Ensure key is always unique
-
+- Firebase and Firestore for authentication and storage of TODOs
