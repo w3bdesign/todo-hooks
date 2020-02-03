@@ -2,9 +2,9 @@
 
 # React TODO with Hooks
 
-Currently a work in progress.
+More features will be added in a near future.
 
-## Features:
+## Current features:
 
 - Ant Design with the following components: able, Row, Col, Popconfirm, Typography, Popup notification
 - React hooks (useState)
@@ -15,3 +15,4 @@ Currently a work in progress.
 ## TODO
 
 - Firebase and Firestore for authentication and storage of TODOs
+- Implement more components from Ant design?
