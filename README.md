@@ -14,8 +14,10 @@ More features will be added in a near future.
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support
 - Responsive layout for mobile devices
+- DevOps integration with CircleCI unit testing
 
 ## TODO
 
 - Firebase and Firestore for authentication and storage of TODOs
 - Implement more components from Ant design?
+- Add more tests
