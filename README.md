@@ -2,7 +2,9 @@
 
 # React TODO with Hooks
 
-Features:
+Currently a work in progress.
+
+## Features:
 
 - Ant Design with the following components: able, Row, Col, Popconfirm, Typography, Popup notification
 - React hooks (useState)
