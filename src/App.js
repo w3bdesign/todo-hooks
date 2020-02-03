@@ -97,15 +97,26 @@ function App() {
       title: 'Action',
       key: 'action',
       dataIndex: 'action',
-      render: (_, record) =>
-        todos.length >= 1 ? (
+      render: (_, record) => {
+        const findMe = element => element.key === record.key;
+        const foundCompleted = completed.find(findMe) ?? 'false';
+
+        return (
+          // Add className to span so we can hide action if completed
           <>
             <a
               href="#complete"
               onClick={() => handleComplete(record.key, record.dataIndex)}
             >
-              Complete |
+              <span
+                className={
+                  foundCompleted.completed === 'true' ? 'hideaction' : ''
+                }
+              >
+                Complete |{' '}
+              </span>
             </a>
+
             <Popconfirm
               title="Are you sure you want to delete?"
               onConfirm={() => handleDelete(record.key, record.dataIndex)}
@@ -113,7 +124,8 @@ function App() {
               <a href="#delete"> Delete </a>
             </Popconfirm>
           </>
-        ) : null
+        );
+      }
     }
   ];
 

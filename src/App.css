@@ -21,3 +21,8 @@ span[role='img'] {
 .true {
   text-decoration: line-through;
 }
+
+.hideaction
+{
+  display: none;
+}
