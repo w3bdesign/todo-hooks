@@ -8,8 +8,7 @@ More features will be added in a near future.
 
 - Ant Design with the following components: able, Row, Col, Popconfirm, Typography, Popup notification
 - React hooks (useState)
-- Add and delete TODOs
-- Complete TODOs
+- Add, delete and complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support
