@@ -13,6 +13,7 @@ More features will be added in a near future.
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support
+- Responsive layout for mobile devices
 
 ## TODO
 
