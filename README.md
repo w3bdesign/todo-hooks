@@ -16,4 +16,4 @@ More features will be added in a near future.
 ## TODO
 
 - Firebase and Firestore for authentication and storage of TODOs
-- Implement more components from Ant design? For example adding pagination
+- Implement more components from Ant design?
