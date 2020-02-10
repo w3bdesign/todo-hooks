@@ -1,7 +1,6 @@
 import React from 'react';
-
 import { Input, Button, Form, Icon } from 'antd';
-
+import { openNotification } from './../../functions/functions';
 import uuid from 'uuid';
 
 // We destructure the props sent from the parent
@@ -11,37 +10,32 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
       onSubmit={e => {
         // We have access to the form hook value here
         e.preventDefault();
-        const uniqueID = uuid.v4();  
-        
-        // key = todos.length
+        const uniqueID = uuid.v4();
         const addTodo = [...todos];
-        addTodo.push({
-          key: uniqueID,
-          title: form, 
-          dataIndex: todos.length
-        });
-        setTodos(addTodo);
-        
-        /*setTodos([
-          ...todos,
-          {
+
+        if (form.length < 5) {
+          openNotification(
+            'bottomLeft',
+            'Title must be a minimum of 5 letters'
+          );
+        } else {
+          addTodo.push({
             key: uniqueID,
-            title: form,            
-            dataIndex: uniqueID
-          }
-        ]);*/
+            title: form,
+            dataIndex: todos.length
+          });
+          setTodos(addTodo);
 
-        console.log(todos);
+          const tempComplete = [...completed];
 
-        const tempComplete = [...completed];
+          tempComplete.push({
+            key: uniqueID,
+            dataindex: todos.length,
+            completed: 'false'
+          });
 
-        tempComplete.push({
-          key: uniqueID,
-          dataindex: todos.length,
-          completed: 'false'
-        });
-
-        setCompleted(tempComplete);
+          setCompleted(tempComplete);
+        }
       }}
     >
       <h3>Add TODO</h3>
