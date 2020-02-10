@@ -13,17 +13,17 @@ import {
 
 import { openNotification } from './functions/functions';
 
-//import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; //TODO
+//import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; // TODO
 
 const { Paragraph } = Typography;
 
 function App() {
-  // Add a default TODO when loading the site  
+  // Add a default TODO when loading the site
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
 
-  // https://stackoverflow.com/questions/46138145/functions-in-stateless-components
+  // https://stackoverflow.com/questions/46138145/functions-in-stateless-components // TODO = Move functions outside of App()
 
   const handleDelete = (key, dataindex) => {
     const filteredTodos = todos.filter(item => item.key !== key);
