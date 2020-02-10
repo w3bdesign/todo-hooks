@@ -4,7 +4,12 @@ import { Table, Row, Col, Popconfirm, Typography, notification } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
-import uuid from 'uuid';
+//import uuid from 'uuid';
+
+import {
+  FORM_INITIAL_STATE,
+  COMPLETED_INITIAL_STATE
+} from './constants/INITIAL_STATE';
 
 //import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; //TODO
 
@@ -12,23 +17,11 @@ const { Paragraph } = Typography;
 
 function App() {
   // Add a default TODO when loading the site
-  const uniqueID = uuid.v4();
-  const [form, setForm] = useState([
-    {
-      key: uniqueID,
-      title: 'Use Hooks in a React application (Default TODO)',
-      dataIndex: 0
-    }
-  ]);
+  //const uniqueID = uuid.v4();
+  const [form, setForm] = useState([FORM_INITIAL_STATE]);
 
   const [todos, setTodos] = useState([...form]);
-  const [completed, setCompleted] = useState([
-    {
-      key: uniqueID,
-      dataindex: 0,
-      completed: 'false'
-    }
-  ]);
+  const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
 
   const openNotification = (placement, text) => {
     notification.info({
