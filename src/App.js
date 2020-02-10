@@ -18,11 +18,12 @@ import { openNotification } from './functions/functions';
 const { Paragraph } = Typography;
 
 function App() {
-  // Add a default TODO when loading the site
-  //const uniqueID = uuid.v4();
+  // Add a default TODO when loading the site  
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
+
+  // https://stackoverflow.com/questions/46138145/functions-in-stateless-components
 
   const handleDelete = (key, dataindex) => {
     const filteredTodos = todos.filter(item => item.key !== key);
