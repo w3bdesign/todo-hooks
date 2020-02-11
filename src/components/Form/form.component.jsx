@@ -44,6 +44,7 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
           prefix={<Icon type="tags" className="icon" />}
           onChange={e => {
             // Set state through hooks. Call function though parent component.
+            // Look into useCallback here // TODO
             setForm(e.target.value);
           }}
         />
