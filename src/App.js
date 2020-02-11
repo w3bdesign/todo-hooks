@@ -17,7 +17,7 @@ import { openNotification } from './functions/functions';
 
 const { Paragraph } = Typography;
 
-function App() {
+const App = () => {
   // Add a default TODO when loading the site
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
@@ -137,6 +137,6 @@ function App() {
       </Row>
     </div>
   );
-}
+};
 
 export default App;
