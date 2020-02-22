@@ -18,6 +18,6 @@ More features will be added in a near future.
 
 ## TODO
 
-- Firebase and Firestore for authentication and storage of TODOs
+- Firebase and Firestore (or LocalStorage?) for authentication and storage of TODOs
 - Implement more components from Ant design?
 - Add more tests
