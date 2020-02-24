@@ -1,5 +1,5 @@
-import uuid from 'uuid';
-const uniqueID = uuid.v4();
+import { v4 as uuidv4 } from 'uuid';
+const uniqueID = uuidv4();
 
 export const FORM_INITIAL_STATE = {
   key: uniqueID,

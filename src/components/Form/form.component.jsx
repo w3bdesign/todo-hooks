@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Button, Form, Icon } from 'antd';
 import { openNotification } from './../../functions/functions';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 // We destructure the props sent from the parent
 function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
@@ -10,7 +10,7 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
       onSubmit={e => {
         // We have access to the form hook value here
         e.preventDefault();
-        const uniqueID = uuid.v4();
+        const uniqueID = uuidv4();
         const addTodo = [...todos];
 
         if (form.length < 5) {
