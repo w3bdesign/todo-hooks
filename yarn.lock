@@ -5000,7 +5000,7 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-firebase@^7.7.0:
+firebase@^7.9.1:
   version "7.9.1"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.9.1.tgz#e2fe163f37220083d47537b12f91f754d2245695"
   integrity sha512-yF80JPxLDXypBxhOeJDKULeP1MwZ/+Clovx3JZOvzH9yoRhIZZBx17/vkQFb7d0b+ICqwrKIofgpPzPef+CMpw==
