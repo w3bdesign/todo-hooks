@@ -1,12 +1,12 @@
 {
   "name": "todo-hooks",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^10.0.0",
-    "antd": "^3.26.12",
+    "antd": "^4.0.0",
     "firebase": "^7.9.2",
     "react": "^16.13.0",
     "react-app-polyfill": "^1.0.6",

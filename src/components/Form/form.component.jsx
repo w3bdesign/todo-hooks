@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input, Button, Form, Icon } from 'antd';
+import { Input, Button, Form } from 'antd';
+import { TagsOutlined } from '@ant-design/icons';
 import { openNotification } from './../../functions/functions';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -7,9 +8,10 @@ import { v4 as uuidv4 } from 'uuid';
 function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
   return (
     <Form
-      onSubmit={e => {
+    // was onSubmit
+    onFinish={e => {
         // We have access to the form hook value here
-        e.preventDefault();
+        //e.preventDefault();
         const uniqueID = uuidv4();
         const addTodo = [...todos];
 
@@ -41,7 +43,7 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
       <h3>Add TODO</h3>
       <Form.Item name="todotext">
         <Input
-          prefix={<Icon type="tags" className="icon" />}
+          prefix={<TagsOutlined />}
           onChange={e => {
             // Set state through hooks. Call function though parent component.
             // Look into useCallback here: // TODO
@@ -58,4 +60,5 @@ function TodoForm({ form, setForm, todos, setTodos, completed, setCompleted }) {
   );
 }
 
-export default Form.create()(TodoForm);
+//export default Form.create()(TodoForm);
+export default TodoForm;
