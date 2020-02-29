@@ -7,7 +7,7 @@ More features will be added in a near future.
 
 ## Current features:
 
-- Ant Design with the following components: Table, Row, Col, Popconfirm, Typography, Popup notification
+- Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
 - React hooks (useState)
 - Add, delete and complete TODOs
 - Uuid for unique React key identifier
