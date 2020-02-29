@@ -2,8 +2,25 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
+// Tests stopped working in AntD v4 so we need to mock window.matchmedia
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn()
+  }))
+});
+
 test('Renders Add TODO', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/Add TODO/i);  
+  const linkElement = getByText(/Add TODO/i);
+
   expect(linkElement).toBeInTheDocument();
 });

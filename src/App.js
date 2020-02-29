@@ -4,7 +4,6 @@ import { Table, Row, Col, Popconfirm, Typography } from 'antd';
 import 'antd/dist/antd.css';
 
 import TodoForm from './components/Form/form.component';
-//import uuid from 'uuid';
 
 import {
   FORM_INITIAL_STATE,
