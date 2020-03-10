@@ -18,6 +18,7 @@ More features will be added in a near future.
 
 ## TODO
 
+- Adding DatePicker to select date for TODO
 - Firebase and Firestore (or LocalStorage?) for authentication and storage of TODOs
 - Implement more components from Ant design?
 - Add more tests
