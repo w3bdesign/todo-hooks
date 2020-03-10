@@ -3,7 +3,7 @@
 
 # React TODO with Hooks
 
-More features will be added in a near future.
+Currently working on the DatePicker.
 
 ## Current features:
 

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { DatePicker } from 'antd';
-//import moment from 'moment';
 
-const Kalender = () => 
-{
-return (
-    <DatePicker />
-)
-}
+const onChangeDate = dateString => {
+  console.log(dateString);
+};
+
+const Kalender = () => {
+  return <DatePicker onChange={onChangeDate} />;
+};
 
 export default Kalender;

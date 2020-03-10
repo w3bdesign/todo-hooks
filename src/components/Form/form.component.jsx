@@ -13,7 +13,9 @@ const TodoForm = ({
   todos,
   setTodos,
   completed,
-  setCompleted
+  setCompleted,
+  date,
+  setDate
 }) => {
   return (
     <Form
@@ -65,10 +67,10 @@ const TodoForm = ({
 
         <Col>
           <Form.Item name="calendar" label="Date picker">
-            <Kalender />
+            <Kalender onChange={setDate} />
           </Form.Item>
         </Col>
-        
+
       </Row>
 
       <Row>

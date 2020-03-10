@@ -21,6 +21,7 @@ const App = () => {
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
+  const [date, setDate] = useState([]);
 
   // https://stackoverflow.com/questions/46138145/functions-in-stateless-components // TODO = Move functions outside of App()
 
@@ -79,6 +80,29 @@ const App = () => {
         );
       }
     },
+
+    {
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
+      render: (text, record) => {
+        // Search for key (uniqueID) in completed TODOs array
+        const findMe = element => element.key === record.key;
+        const foundCompleted = completed.find(findMe) ?? 'false';
+        return (
+          <Paragraph
+            className={
+              // Display text-decoration: line-through if TODO is completed (true)
+              foundCompleted.completed === 'true' ? 'true' : 'false'
+            }
+          >
+            {text}
+          </Paragraph>
+        );
+      }
+    },
+
+
     {
       title: 'Action',
       key: 'action',
@@ -131,6 +155,8 @@ const App = () => {
             setTodos={setTodos}
             completed={completed}
             setCompleted={setCompleted}
+            date={date}
+            setDate={setDate}
           />
         </Col>
       </Row>
