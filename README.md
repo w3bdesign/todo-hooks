@@ -3,7 +3,7 @@
 
 # React TODO with Hooks
 
-Currently working on the DatePicker.
+Currently working on the DatePicker and replacing the hooks with a better solution, like a useReducer or useContext hook.
 
 ## Current features:
 
