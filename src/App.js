@@ -1,6 +1,8 @@
 /*
 Read these for inspiration:
 
+TODO
+
 https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks
 https://www.freecodecamp.org/news/how-to-build-a-todo-list-with-react-hooks-ebaa4e3db3b/
 https://www.pusher.com/tutorials/todo-app-react-hooks
@@ -8,6 +10,13 @@ https://medium.com/javascript-in-plain-english/how-to-build-a-todo-list-app-with
 https://medium.com/@anjubudhwan/create-todo-app-using-react-hooks-1048f74bd4a7
 https://codesandbox.io/s/ql2y86xz6j
 https://blog.bitsrc.io/quickly-compose-a-react-todo-app-using-hooks-and-bit-c757df90a7ff
+
+useReducer
+
+https://react-tracked.js.org/docs/tutorial-02/
+https://medium.com/@n.raj.suthar/building-a-todo-list-with-react-hooks-usereducer-95432a261c11
+https://www.facebook.com/522521018193088/posts/small-todo-list-with-usereducer-hook-with-react-hooks-you-can-use-usereducer-ins/624760277969161/
+
 */
 
 import React, { useState } from 'react';
