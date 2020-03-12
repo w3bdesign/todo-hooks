@@ -17,7 +17,7 @@ import { openNotification } from './functions/functions';
 const { Paragraph } = Typography;
 
 const App = () => {
-  // Add a default TODO when loading the site
+  // TODO Refactor into a useReducer hook?
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
