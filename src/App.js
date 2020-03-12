@@ -1,3 +1,15 @@
+/*
+Read these for inspiration:
+
+https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks
+https://www.freecodecamp.org/news/how-to-build-a-todo-list-with-react-hooks-ebaa4e3db3b/
+https://www.pusher.com/tutorials/todo-app-react-hooks
+https://medium.com/javascript-in-plain-english/how-to-build-a-todo-list-app-with-react-hooks-and-typescript-b9cbdc61e966
+https://medium.com/@anjubudhwan/create-todo-app-using-react-hooks-1048f74bd4a7
+https://codesandbox.io/s/ql2y86xz6j
+https://blog.bitsrc.io/quickly-compose-a-react-todo-app-using-hooks-and-bit-c757df90a7ff
+*/
+
 import React, { useState } from 'react';
 import './App.css';
 import { Table, Row, Col, Popconfirm, Typography } from 'antd';
