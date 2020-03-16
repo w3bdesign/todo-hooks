@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^10.0.1",
     "@testing-library/user-event": "^10.0.0",
-    "antd": "^4.0.2",
+    "antd": "^4.0.3",
     "firebase": "^7.11.0",
     "react": "^16.13.0",
     "react-app-polyfill": "^1.0.6",
