@@ -3,12 +3,16 @@
 
 # React TODO with Hooks
 
-Currently working on the DatePicker and replacing the hooks with a better solution, like a useReducer or useContext hook.
+## Currently working on:
+
+- Adding Ant Design DatePicker for date selection 
+- Replacing useState with custom React hooks
+- Separation of anonymous functions with functions in separate files
 
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
-- React Hooks (useState)
+- React Hooks (useState and custom React hooks)
 - Add, delete and complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
