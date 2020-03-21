@@ -5,6 +5,7 @@
 
 ## Currently working on:
 
+- Refactoring entire project with better coding standards
 - Adding Ant Design DatePicker for date selection 
 - Replacing useState with custom React hooks
 - Separation of anonymous functions with functions in separate files
