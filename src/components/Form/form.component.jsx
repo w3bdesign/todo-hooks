@@ -1,20 +1,22 @@
 import React from 'react';
 import { Input, Button, Form, Row, Col } from 'antd';
 import { TagsOutlined } from '@ant-design/icons'; // Icon
-import { openNotification } from '../../functions/openNotification';
-import { v4 as uuidv4 } from 'uuid';
 
 import Kalender from '../Calendar/calendar.component';
 
+// Custom Hooks
 import useForm from '../../utils/useForm';
-import useTodos from "../../utils/useTodos.js";
+import useTodos from '../../utils/useTodos.js';
 
+// Functions
+import onFormSubmit from '../../functions/onFormSubmit.js';
 
 // We destructure the props sent from the parent
+// We wont need these after the refactoring
 const TodoForm = ({
   //form,
   //setForm,
-  //todos,
+  //todos, //TODO
   //setTodos,
   completed,
   setCompleted,
@@ -22,16 +24,10 @@ const TodoForm = ({
   setDate
 }) => {
   const [form, handleChange] = useForm();
-  const [todos, handleTodos] = useTodos();
+  const [todos, handleTodos] = useTodos(); //TODO
 
   return (
-    <Form
-      onFinish={e => {       
-        // TODO
-        //onFormSubmit
-
-      }}
-    >
+    <Form onFinish={onFormSubmit}>
       <h3>
         <b>Add TODO item</b>
       </h3>
