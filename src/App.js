@@ -1,50 +1,39 @@
 /*
-Read these for inspiration:
+Read for inspiration:
 
-TODO
-
-https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks
-https://www.freecodecamp.org/news/how-to-build-a-todo-list-with-react-hooks-ebaa4e3db3b/
-https://www.pusher.com/tutorials/todo-app-react-hooks
-https://medium.com/javascript-in-plain-english/how-to-build-a-todo-list-app-with-react-hooks-and-typescript-b9cbdc61e966
-https://medium.com/@anjubudhwan/create-todo-app-using-react-hooks-1048f74bd4a7
-https://codesandbox.io/s/ql2y86xz6j
-https://blog.bitsrc.io/quickly-compose-a-react-todo-app-using-hooks-and-bit-c757df90a7ff
-
-useReducer
-
-https://react-tracked.js.org/docs/tutorial-02/
-https://medium.com/@n.raj.suthar/building-a-todo-list-with-react-hooks-usereducer-95432a261c11
-https://www.facebook.com/522521018193088/posts/small-todo-list-with-usereducer-hook-with-react-hooks-you-can-use-usereducer-ins/624760277969161/
+https://github.com/dai-shi/react-tracked/blob/master/examples/01_minimal/src/index.js
 
 */
 
 import React, { useState } from 'react';
-import './App.css';
 import { Table, Row, Col, Popconfirm, Typography } from 'antd';
+
 import 'antd/dist/antd.css';
+import './App.css';
 
 import TodoForm from './components/Form/form.component';
+
 
 import {
   FORM_INITIAL_STATE,
   COMPLETED_INITIAL_STATE
 } from './constants/INITIAL_STATE';
 
-import { openNotification } from './functions/functions';
-
-//import { auth, createUserProfileDocument } from "./firebase/firebase.utils"; // TODO
+import { openNotification } from './functions/openNotification';
 
 const { Paragraph } = Typography;
 
 const App = () => {
-  // TODO Refactor into a useReducer hook?
+  
+//const [customtodos, setcustomTodos] = useTodos([FORM_INITIAL_STATE], "test" );
+
+
+
+
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
   const [completed, setCompleted] = useState([COMPLETED_INITIAL_STATE]);
   const [date, setDate] = useState([]);
-
-  // https://stackoverflow.com/questions/46138145/functions-in-stateless-components // TODO = Move functions outside of App()
 
   const handleDelete = (key, dataindex) => {
     const filteredTodos = todos.filter(item => item.key !== key);
@@ -122,7 +111,6 @@ const App = () => {
         );
       }
     },
-
 
     {
       title: 'Action',
