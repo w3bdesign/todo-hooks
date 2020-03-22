@@ -7,10 +7,7 @@
 
 - Refactoring entire project with better coding standards
 - Adding Ant Design DatePicker for date selection 
-- Replacing useState with custom React hooks
-- Separation of anonymous functions with functions in separate files
-- Replace prop drilling with React Tracked for global state
-
+- Replacing useState with useContext and useReducer
 
 ## Current features:
 
