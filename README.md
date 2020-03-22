@@ -11,6 +11,7 @@
 - Separation of anonymous functions with functions in separate files
 - Replace prop drilling with React Tracked for global state
 
+
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification

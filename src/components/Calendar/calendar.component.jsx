@@ -5,8 +5,8 @@ const onChangeDate = dateString => {
   console.log(dateString);
 };
 
-const Kalender = () => {
+const Calendar = () => {
   return <DatePicker onChange={onChangeDate} />;
 };
 
-export default Kalender;
+export default Calendar;
