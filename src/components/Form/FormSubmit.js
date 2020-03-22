@@ -1,11 +1,12 @@
-import { openNotification } from './openNotification';
+import { openNotification } from '../../functions/openNotification';
 import { v4 as uuidv4 } from 'uuid';
 
-export const onFormSubmit = () => {
-    const uniqueID = uuidv4();
-        const addTodo = [...todos];
+export const FormSubmit = () => {
+  const uniqueID = uuidv4();
+   /*
+   const addTodo = [...todos];
 
-        if (form.length < 5) {
+  if (form.length < 5) {
           openNotification(
             'bottomLeft',
             'Title must be a minimum of 5 letters'
@@ -29,5 +30,7 @@ export const onFormSubmit = () => {
 
           setCompleted(tempComplete);
         }
-}
 
+
+        */
+};
