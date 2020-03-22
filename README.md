@@ -5,9 +5,12 @@
 
 ## Currently working on:
 
+- Refactoring entire project with better coding standards
 - Adding Ant Design DatePicker for date selection 
-- Replacing useState with useReducer and useContext
-- Improve coding standards to better follow best practices
+- Replacing useState with custom React hooks
+- Separation of anonymous functions with functions in separate files
+- Replace prop drilling with React Tracked for global state
+
 
 ## Current features:
 
