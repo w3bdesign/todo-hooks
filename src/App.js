@@ -33,7 +33,7 @@ const App = () => {
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Alert
               message="Under development"
-              description="Refactoring project to use useReducer and useContext. Check back later. Last modified: 23-03-2020"
+              description="Refactoring project to use useReducer and useContext. Check back later. Last modified: 24-03-2020"
               type="error"
             />
             <br />
