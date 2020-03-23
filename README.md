@@ -3,11 +3,14 @@
 
 # React TODO with Hooks
 
+The initial release of this project only used useState for state. 
+
+Version 2 will include useContext and useReducer as well as improved readibility and better separation of functions (improved coding standards).
+
 ## Currently working on:
 
-- Refactoring entire project with better coding standards
 - Adding Ant Design DatePicker for date selection 
-- Replacing useState with useContext and useReducer
+- Replacing default useState with also useContext and useReducer
 
 ## Current features:
 
