@@ -36,8 +36,8 @@ const App = () => {
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Alert
-              message="In development"
-              description="Refactoring project to use useReducer and useContext. Check back later."
+              message="Under development"
+              description="Refactoring project to use useReducer and useContext. Check back later. Last modified: 23-03-2020"
               type="error"
             />
             <br />
