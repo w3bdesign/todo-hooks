@@ -1,11 +1,14 @@
 export function todoReducer(state, action) {
     switch (action.type) {
       case 'ADD_TODO':
-        return {count: state.count + 1};
+        //console.log(state);
+        console.log("ADD TODO!");
+        console.log(action.payload);
+        return {state};
       case 'COMPLETE_TODO':
-        return {count: state.count - 1};
+        return {count: "COMPLETE"};
         case 'DELETE_TODO':
-            return {count: state.count - 1};
+          return {count: "DELETE"};
       default:
         throw new Error();
     }
