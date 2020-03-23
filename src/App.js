@@ -41,7 +41,7 @@ const App = () => {
               type="error"
             />
             <br />
-            <Table dataSource={FORM_INITIAL_STATE} columns={FORM_COLUMNS} />
+            <Table dataSource={todos} columns={FORM_COLUMNS} />
           </Col>
         </Row>
         <Row type="flex" justify="center">

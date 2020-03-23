@@ -31,16 +31,13 @@ const TodoForm = ({ todos, dispatchTodos }) => {
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Form.Item name="todotext" label="Title">
-              <Input
-                // value={form.name || ''}
+              <Input                
                 prefix={
                   <TagsOutlined /> // Icon
                 }
                 onChange={e => {
-                setForm(e.target.value);
-                console.log(form);
-                }               
-              }
+                  setForm(e.target.value);
+                }}
               />
             </Form.Item>
           </Col>
@@ -60,7 +57,7 @@ const TodoForm = ({ todos, dispatchTodos }) => {
       </Form>
 
       <Button type="primary" onClick={() => console.log(todos)}>
-        console.log todos value{' '}
+        console.log todos value
       </Button>
     </>
   );
