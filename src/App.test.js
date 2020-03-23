@@ -21,5 +21,6 @@ Object.defineProperty(window, 'matchMedia', {
 test('Renders Add TODO', () => {
   const { getByText } = render(<App />);
   const linkElement = getByText(/Add TODO/i);
+
   expect(linkElement).toBeInTheDocument();
 });
