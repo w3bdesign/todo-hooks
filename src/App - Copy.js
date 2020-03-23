@@ -15,7 +15,7 @@ import 'antd/dist/antd.css';
 import './App.css';
 
 import TodoForm from './components/Form/form.component';
-import todoReducer from "./components/Form/FormReducer";
+import todoReducer from './components/Form/FormReducer';
 
 import {
   FORM_INITIAL_STATE,
@@ -27,12 +27,7 @@ import { openNotification } from './functions/openNotification';
 const { Paragraph } = Typography;
 
 const App = () => {
-  
-//const [customtodos, setcustomTodos] = useTodos([FORM_INITIAL_STATE], "test" );
-const [state, dispatch] = useReducer(todoReducer, FORM_INITIAL_STATE);
-
-
-
+  const [state, dispatch] = useReducer(todoReducer, FORM_INITIAL_STATE);
 
   const [form, setForm] = useState([FORM_INITIAL_STATE]);
   const [todos, setTodos] = useState([...form]);
@@ -162,7 +157,7 @@ const [state, dispatch] = useReducer(todoReducer, FORM_INITIAL_STATE);
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <TodoForm
-          // TODO Replace prop drilling with useReducer
+            // TODO Replace prop drilling with useReducer
             form={form}
             setForm={setForm}
             todos={todos}

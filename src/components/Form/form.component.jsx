@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Input, Button, Form, Row, Col } from 'antd';
 import { TagsOutlined } from '@ant-design/icons'; // Icon
 
+import { openNotification } from '../../functions/openNotification';
+
 import Calendar from '../Calendar/calendar.component';
 
 // Custom Hooks
@@ -24,14 +26,25 @@ const TodoForm = ({ todos, dispatchTodos }) => {
 
   return (
     <>
-      <Form onFinish={() => dispatchTodos({ type: 'ADD_TODO', payload: form })}>
+      <Form
+        onFinish={() => {
+          if (form) {
+            dispatchTodos({ type: 'ADD_TODO', payload: form });
+          } else {
+            openNotification(
+              'bottomLeft',
+              'Title must be a minimum of 5 letters'
+            );
+          }
+        }}
+      >
         <h3>
           <b>Add TODO item</b>
         </h3>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Form.Item name="todotext" label="Title">
-              <Input                
+              <Input
                 prefix={
                   <TagsOutlined /> // Icon
                 }

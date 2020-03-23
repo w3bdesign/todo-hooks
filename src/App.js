@@ -8,7 +8,7 @@ https://reactjs.org/docs/hooks-reference.html#usereducer
 
 */
 
-import React, { useReducer, useContext, createContext } from 'react';
+import React, { useReducer, createContext } from 'react';
 //import { Table, Row, Col, Popconfirm, Typography, Alert } from 'antd';
 import { Table, Row, Col, Alert } from 'antd';
 
@@ -21,14 +21,10 @@ import { todoReducer } from './components/Form/FormReducer';
 import { FORM_INITIAL_STATE } from './constants/INITIAL_STATE';
 import { FORM_COLUMNS } from './constants/FORM_COLUMNS';
 
-export const TodoContext = createContext(null);  
+export const TodoContext = createContext(null);
 
 const App = () => {
-  //const [customtodos, setcustomTodos] = useTodos([FORM_INITIAL_STATE], "test" );
- // const [state, dispatch] = useReducer(todoReducer, FORM_INITIAL_STATE); // TODO Should we move this to the form component?
- const [todos, dispatchTodos] = useReducer(todoReducer, FORM_INITIAL_STATE); 
-
-  
+  const [todos, dispatchTodos] = useReducer(todoReducer, FORM_INITIAL_STATE);
 
   return (
     <TodoContext.Provider value={dispatchTodos}>
@@ -46,10 +42,7 @@ const App = () => {
         </Row>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm
-           todos={todos} 
-           dispatchTodos={dispatchTodos}
-            />
+            <TodoForm todos={todos} dispatchTodos={dispatchTodos} />
           </Col>
         </Row>
       </div>
