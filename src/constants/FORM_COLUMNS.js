@@ -1,7 +1,7 @@
 import React from 'react';
 import { Popconfirm } from 'antd';
 
-import {HandleComplete} from "../components/Form/HandleComplete";
+import { HandleComplete } from '../components/Form/HandleComplete';
 
 export const FORM_COLUMNS = [
   {
@@ -30,16 +30,11 @@ export const FORM_COLUMNS = [
           <a
             href="#complete"
             onClick={() => HandleComplete(record.key, record.dataIndex)}
-                      
           >
-            <span>
-              Complete |{' '}
-            </span>
+            <span>Complete | </span>
           </a>
 
-          <Popconfirm
-            title="Are you sure you want to delete?"            
-          >
+          <Popconfirm title="Are you sure you want to delete?">
             <a href="#delete"> Delete </a>
           </Popconfirm>
         </>
