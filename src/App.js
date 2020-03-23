@@ -37,7 +37,7 @@ const App = () => {
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Alert
               message="In development"
-              description="Please remove me when done"
+              description="Refactoring project to use useReducer and useContext. Check back later."
               type="error"
             />
             <br />
