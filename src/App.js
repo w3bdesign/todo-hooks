@@ -15,7 +15,7 @@ import { Table, Row, Col, Alert } from 'antd';
 import 'antd/dist/antd.css';
 import './App.css';
 
-import TodoForm from './components/Form/form.component';
+import TodoForm from './components/Form/Form.component';
 import { todoReducer } from './components/Form/FormReducer';
 
 import { FORM_INITIAL_STATE } from './constants/INITIAL_STATE';

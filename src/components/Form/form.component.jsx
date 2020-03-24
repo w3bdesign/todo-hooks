@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Input, Button, Form, Row, Col } from 'antd';
 import { TagsOutlined } from '@ant-design/icons'; // Icon
 
@@ -6,23 +6,11 @@ import { openNotification } from '../../functions/openNotification';
 
 import Calendar from '../Calendar/calendar.component';
 
-// Custom Hooks
-//import useForm from '../../utils/useForm';
-//import useTodos from '../../utils/useTodos.js';
+import { TodoContext } from '../../App';
 
-// Functions
-import { FormSubmit } from './FormSubmit';
-
-import TodoContext from '../../App';
-
-// We destructure the props sent from the parent
-// We wont need these after the refactoring
-const TodoForm = ({ todos, dispatchTodos }) => {
-  //const [form, handleChange] = useForm();
-  //const [todos, handleTodos] = useTodos(); //TODO
-
-  //const dispatch = useContext(TodoContext);
+const TodoForm = () => {
   const [form, setForm] = useState();
+  const [todos, dispatchTodos] = useContext(TodoContext);
 
   return (
     <>
