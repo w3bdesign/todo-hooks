@@ -12,9 +12,13 @@ export function todoReducer(state, action) {
       });
     case 'COMPLETE_TODO':
       openNotification('bottomLeft', 'TODO completed');
+      console.log("Complete called in reducer:");
+      console.log(state);
+      console.log(action.id);
+
       return state.map(todo => {
         if (todo.id === action.id) {
-          return { ...todo, completed: 'true' };
+          return { ...state, completed: 'true' };
         } else {
           return todo;
         }

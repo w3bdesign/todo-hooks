@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Popconfirm } from 'antd';
 
-import { HandleComplete } from '../components/Form/HandleComplete';
+/*
+
+ const findMe = element => element.key === record.key;
+  const foundCompleted = completed.find(findMe) ?? 'false';
+  const [todos, dispatchTodos] = useContext(TodoContext);
+     
+      return (
+        // Add className to span so we can hide action if completed
+        <>
+         
+          <a
+            href="#complete"
+            onClick={() => {
+              console.log("Click")
+              //dispatchTodos({ type: 'COMPLETE_TODO', payload: [record.key, record.dataIndex] })
+              //dispatchTodos(record.key, record.dataIndex)
+            }            
+
+          >
+            <span>Complete | </span>
+          </a>
+
+          <Popconfirm title="Are you sure you want to delete?">
+            <a href="#delete"> Delete </a>
+          </Popconfirm>
+          */
+import { TodoContext } from '../App';
+
+const Complete = () => {
+  //console.log(TodoContext);
+  const [todos, dispatchTodos] = useContext(TodoContext);
+  console.log('Column todos ........');
+  console.log(todos);
+  return (
+    <a href="#complete" onClick={() => {console.log(todos)}}>
+      <span>Complete</span>
+    </a>
+  );
+};
 
 export const FORM_COLUMNS = [
   {
@@ -21,22 +59,9 @@ export const FORM_COLUMNS = [
     key: 'action',
     dataIndex: 'action',
     render: (_, record) => {
-      //const findMe = element => element.key === record.key;
-      //const foundCompleted = completed.find(findMe) ?? 'false';
-
       return (
-        // Add className to span so we can hide action if completed
         <>
-          <a
-            href="#complete"
-            onClick={() => HandleComplete(record.key, record.dataIndex)}
-          >
-            <span>Complete | </span>
-          </a>
-
-          <Popconfirm title="Are you sure you want to delete?">
-            <a href="#delete"> Delete </a>
-          </Popconfirm>
+          <Complete />
         </>
       );
     }

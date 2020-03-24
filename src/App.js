@@ -21,13 +21,13 @@ import { todoReducer } from './components/Form/FormReducer';
 import { FORM_INITIAL_STATE } from './constants/INITIAL_STATE';
 import { FORM_COLUMNS } from './constants/FORM_COLUMNS';
 
-export const TodoContext = createContext(null);
+export const TodoContext = createContext();
 
 const App = () => {
   const [todos, dispatchTodos] = useReducer(todoReducer, FORM_INITIAL_STATE);
 
   return (
-    <TodoContext.Provider value={dispatchTodos}>
+    <TodoContext.Provider value={[todos, dispatchTodos]}>
       <div className="App">
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
