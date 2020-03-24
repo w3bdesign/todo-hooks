@@ -5,6 +5,8 @@
 
 More features will be added in a near future.
 
+Currently working on a major refactor.
+
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
