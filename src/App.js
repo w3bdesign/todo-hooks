@@ -1,8 +1,8 @@
 /*
+
 Read for inspiration:
 
 https://github.com/dai-shi/react-tracked/blob/master/examples/01_minimal/src/index.js
-
 https://reactjs.org/docs/hooks-reference.html#usecontext
 https://reactjs.org/docs/hooks-reference.html#usereducer
 
