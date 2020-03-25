@@ -33,7 +33,7 @@ const App = () => {
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
             <Alert
               message="Under development"
-              description="Refactoring project to use useReducer and useContext. Test branch protection signed. Last modified: 24-03-2020"
+              description="Refactoring project to use useReducer and useContext. Test branch protection signed. Last modified: 25-03-2020"
               type="error"
             />
             <br />
