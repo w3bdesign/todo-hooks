@@ -17,5 +17,8 @@ export const Title = ({ children, record }) => {
   const findMe = element => element.key === todos.key;
   const foundCompleted = todos.find(findMe) ?? 'false';
 
-  return <Paragraph className="true">{children}</Paragraph>;
+  return <Paragraph  className={
+    // Display text-decoration: line-through if TODO is completed (true)
+    foundCompleted.completed === 'true' ? 'true' : 'false'
+  }>{children}</Paragraph>;
 };
