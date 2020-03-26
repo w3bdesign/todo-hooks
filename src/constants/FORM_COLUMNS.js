@@ -10,7 +10,7 @@ export const FORM_COLUMNS = [
     dataIndex: 'title',
     key: 'title',
     render: (text, record) => {
-      return <Title>{text}</Title>;
+      return <Title record={record}>{text}</Title>;
     }
   },
 

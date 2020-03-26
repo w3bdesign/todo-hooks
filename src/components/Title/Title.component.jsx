@@ -5,14 +5,17 @@ import { TodoContext } from '../../App';
 
 const { Paragraph } = Typography;
 
-export const Title = (props) => {
-    const [todos, dispatchTodos] = useContext(TodoContext);
-    console.log("Title todos: ");
+export const Title = ({ children, record }) => {
+  const [todos, dispatchTodos] = useContext(TodoContext);
 
-    console.log(todos);
-    // const findMe = element => element.key === record.key;
-    // const foundCompleted = completed.find(findMe) ?? 'false';
-    return (
-        <Paragraph className="true">{props.children}</Paragraph>
-    );
-  };
+  console.log('Title');
+  console.log(record.key);
+
+  //const foundCompleted = todos.find(record.key) ?? 'false';
+  //console.log(todos.find(record.key));
+
+  const findMe = element => element.key === todos.key;
+  const foundCompleted = todos.find(findMe) ?? 'false';
+
+  return <Paragraph className="true">{children}</Paragraph>;
+};
