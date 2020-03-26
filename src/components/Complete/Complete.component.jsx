@@ -55,15 +55,15 @@ import React, { useContext } from 'react';
 import { Popconfirm } from 'antd';
 import { TodoContext } from '../../App';
 
-export const Complete = () => {
-  const [todos, dispatchTodos] = useContext(TodoContext);
-  console.log('Column todos ........');
- // console.log(todos);
+export const Complete = ({record}) => {
+  const [todos, dispatchTodos] = useContext(TodoContext);  
   return (
     <a
       href="#complete"
       onClick={() => {
-        console.log(todos);
+        console.log("Record:");
+        console.log(record.key)
+        dispatchTodos({ type: 'COMPLETE_TODO', payload: record.key });
       }}
     >
       <span>Complete</span>

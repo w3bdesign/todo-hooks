@@ -21,7 +21,7 @@ export const FORM_COLUMNS = [
     render: (_, record) => {
       return (
         <>
-          <Complete />
+          <Complete record={record}/>
         </>
       );
     }
