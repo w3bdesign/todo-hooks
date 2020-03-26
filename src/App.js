@@ -42,7 +42,7 @@ const App = () => {
         </Row>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <TodoForm todos={todos} dispatchTodos={dispatchTodos} />
+            <TodoForm />
           </Col>
         </Row>
       </div>

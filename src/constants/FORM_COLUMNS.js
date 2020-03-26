@@ -18,10 +18,10 @@ export const FORM_COLUMNS = [
     title: 'Action',
     key: 'action',
     dataIndex: 'action',
-    render: (_, record) => {
+    render: (text, record) => {
       return (
         <>
-          <Complete record={record}/>
+          <Complete text={text} record={record}/>
         </>
       );
     }

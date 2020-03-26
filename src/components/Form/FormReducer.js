@@ -12,7 +12,6 @@ export function todoReducer(state, action) {
       });
     case 'COMPLETE_TODO':
       openNotification('bottomLeft', 'TODO completed');
-
       return state.map(todo => {
         if (todo.key === action.payload) {
           return { ...todo, completed: 'true' };
