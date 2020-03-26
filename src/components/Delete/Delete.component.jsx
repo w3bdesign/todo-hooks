@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../App';
 
+import { Popconfirm } from 'antd';
+
 export const Delete = ({ record }) => {
   const [todos, dispatchTodos] = useContext(TodoContext);
   return (
-    <a
-      href="#delete"
-      onClick={() => {
-        //dispatchTodos({ type: 'DELETE_TODO', payload: record.key });
+    <Popconfirm
+      title="Are you sure you want to delete?"
+      onConfirm={() => {
+        dispatchTodos({ type: 'DELETE_TODO', payload: record.key });
       }}
     >
-      <span>Delete</span>
-    </a>
+      <a href="#delete">Delete </a>
+    </Popconfirm>
   );
 };

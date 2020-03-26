@@ -1,12 +1,17 @@
 import React from 'react';
+
 import { Complete } from '../components/Complete/Complete.component';
 import { Delete } from '../components/Delete/Delete.component';
+import { Title } from '../components/Title/Title.component';
 
 export const FORM_COLUMNS = [
   {
     title: 'Title',
     dataIndex: 'title',
-    key: 'title'
+    key: 'title',
+    render: (text, record) => {
+      return <Title>{text}</Title>;
+    }
   },
 
   {
@@ -22,7 +27,8 @@ export const FORM_COLUMNS = [
     render: (text, record) => {
       return (
         <>
-          <Complete text={text} record={record} />{' | '}
+          <Complete text={text} record={record} />
+          {' | '}
           <Delete text={text} record={record} />
         </>
       );
