@@ -16,7 +16,7 @@ const TodoForm = () => {
     <>
       <Form
         onFinish={() => {
-          if (form) {
+          if (form.length >= 5) {
             dispatchTodos({ type: 'ADD_TODO', payload: form });
           } else {
             openNotification(
