@@ -4,7 +4,7 @@ import { TodoContext } from '../../App';
 import { Popconfirm } from 'antd';
 
 export const Delete = ({ record }) => {
-  const [todos, dispatchTodos] = useContext(TodoContext);
+  const [, dispatchTodos] = useContext(TodoContext);
   return (
     <Popconfirm
       title="Are you sure you want to delete?"

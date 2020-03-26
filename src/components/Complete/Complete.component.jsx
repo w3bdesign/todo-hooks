@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TodoContext } from '../../App';
 
 export const Complete = ({ record }) => {
-  const [todos, dispatchTodos] = useContext(TodoContext);
+  const [, dispatchTodos] = useContext(TodoContext);
   return (
     <a
       href="#complete"
