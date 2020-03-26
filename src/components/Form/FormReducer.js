@@ -20,7 +20,19 @@ export function todoReducer(state, action) {
         }
       });
     case 'DELETE_TODO':
-      console.log("Delete")
+      openNotification('bottomLeft', 'TODO deleted');
+      
+      const filteredTodos = state.filter(item => item.key !== action.payload);
+      //console.log(action.payload);
+      //console.log(filteredTodos);
+
+      console.log("State from delete:")
+      console.log(action.payload);
+      console.log(filteredTodos);
+      return filteredTodos;
+      /*return state.splice({
+        key: action.payload
+      });*/
     default:
       throw new Error();
   }
