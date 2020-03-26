@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../App';
 
-export const Complete = ({ record }) => {
+export const Delete = ({ record }) => {
   const [todos, dispatchTodos] = useContext(TodoContext);
   return (
     <a
-      href="#complete"
+      href="#delete"
       onClick={() => {
-        dispatchTodos({ type: 'COMPLETE_TODO', payload: record.key });
+        //dispatchTodos({ type: 'DELETE_TODO', payload: record.key });
       }}
     >
-      <span>Complete</span>
+      <span>Delete</span>
     </a>
   );
 };

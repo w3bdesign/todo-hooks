@@ -16,7 +16,8 @@ const TodoForm = () => {
     <>
       <Form
         onFinish={() => {
-          if (form.length >= 5) {
+          if (form && form.length >= 5) {
+            console.log(form);
             dispatchTodos({ type: 'ADD_TODO', payload: form });
           } else {
             openNotification(

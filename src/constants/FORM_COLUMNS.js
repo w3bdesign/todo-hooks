@@ -1,5 +1,6 @@
 import React from 'react';
 import { Complete } from '../components/Complete/Complete.component';
+import { Delete } from '../components/Delete/Delete.component';
 
 export const FORM_COLUMNS = [
   {
@@ -21,7 +22,8 @@ export const FORM_COLUMNS = [
     render: (text, record) => {
       return (
         <>
-          <Complete text={text} record={record}/>
+          <Complete text={text} record={record} />{' | '}
+          <Delete text={text} record={record} />
         </>
       );
     }
