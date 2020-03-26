@@ -3,9 +3,9 @@
 
 # React TODO with Hooks
 
-More features will be added in a near future.
-
 Currently working on a major refactor.
+
+Check out the dev branch for updated progress.
 
 ## Current features:
 
