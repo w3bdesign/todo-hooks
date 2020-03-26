@@ -4,7 +4,9 @@
 # React TODO with Hooks
 
 The initial release of this project only used useState for state.
+
 I have now done a major refactor in order to use useReducer and useContext.
+
 I have considered utilizing useMemo or useCallback, but I do not think the performance benefit is worth it at this point.
 
 ## Currently working on:
