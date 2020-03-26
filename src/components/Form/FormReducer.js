@@ -20,7 +20,7 @@ export function todoReducer(state, action) {
         }
       });
     case 'DELETE_TODO':
-      return { count: 'DELETE' };
+      console.log("Delete")
     default:
       throw new Error();
   }

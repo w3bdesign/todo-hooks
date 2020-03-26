@@ -27,9 +27,9 @@ export const FORM_COLUMNS = [
     render: (text, record) => {
       return (
         <>
-          <Complete text={text} record={record} />
+          <Complete record={record} />
           {' | '}
-          <Delete text={text} record={record} />
+          <Delete record={record} />
         </>
       );
     }
