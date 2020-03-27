@@ -24,8 +24,7 @@ export function todoReducer(state, action) {
       });
     case 'DELETE_TODO':
       openNotification('bottomLeft', 'TODO deleted');
-      const filteredTodos = state.filter(item => item.key !== action.payload);
-      return filteredTodos;
+      return state.filter(item => item.key !== action.payload);
     default:
       openNotification('bottomLeft', 'An error has occured!');
       throw new Error();
