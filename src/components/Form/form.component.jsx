@@ -46,7 +46,8 @@ const TodoForm = () => {
 
           <Col>
             <Form.Item label="Date picker">
-              { //<Calendar onChange={() => console.log('Change!')} /> 
+              {
+                //<Calendar onChange={() => console.log('Change!')} />
               }
             </Form.Item>
           </Col>
@@ -58,10 +59,6 @@ const TodoForm = () => {
           </Button>
         </Row>
       </Form>
-
-      <Button type="primary" onClick={() => console.log(todos)}>
-        console.log todos value
-      </Button>
     </>
   );
 };

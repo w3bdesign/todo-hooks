@@ -1,15 +1,5 @@
-/*
-
-Read for inspiration:
-
-https://github.com/dai-shi/react-tracked/blob/master/examples/01_minimal/src/index.js
-https://reactjs.org/docs/hooks-reference.html#usecontext
-https://reactjs.org/docs/hooks-reference.html#usereducer
-
-*/
-
 import React, { useReducer, createContext } from 'react';
-import { Table, Row, Col, Alert } from 'antd';
+import { Table, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
 import './App.css';
@@ -30,12 +20,6 @@ const App = () => {
       <div className="App">
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <Alert
-              message="Under development"
-              description="Refactoring project to use useReducer and useContext. Last modified: 27-03-2020"
-              type="error"
-            />
-            <br />
             <Table dataSource={todos} columns={FORM_COLUMNS} />
           </Col>
         </Row>
