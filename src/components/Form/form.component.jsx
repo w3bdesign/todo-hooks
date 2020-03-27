@@ -32,7 +32,7 @@ const TodoForm = () => {
         </h3>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <Form.Item name="todotext" label="Title">
+            <Form.Item label="Title">
               <Input
                 prefix={
                   <TagsOutlined /> // Icon
@@ -45,7 +45,7 @@ const TodoForm = () => {
           </Col>
 
           <Col>
-            <Form.Item name="calendar" label="Date picker">
+            <Form.Item label="Date picker">
               { //<Calendar onChange={() => console.log('Change!')} /> 
               }
             </Form.Item>
