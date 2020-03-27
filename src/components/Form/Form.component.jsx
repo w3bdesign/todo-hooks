@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Input, Button, Form, Row, Col } from 'antd';
-import { TagsOutlined } from '@ant-design/icons'; 
+import { TagsOutlined } from '@ant-design/icons';
 
 import { openNotification } from '../../functions/openNotification';
 
@@ -8,7 +8,7 @@ import { openNotification } from '../../functions/openNotification';
 
 import { TodoContext } from '../../App';
 
-export const Test = () => {
+export const TodoForm = () => {
   const [form, setForm] = useState();
   const [, dispatchTodos] = useContext(TodoContext);
 
@@ -17,7 +17,6 @@ export const Test = () => {
       <Form
         onFinish={() => {
           if (form && form.length >= 5) {
-            console.log(form);
             dispatchTodos({ type: 'ADD_TODO', payload: form });
           } else {
             openNotification(
@@ -55,7 +54,7 @@ export const Test = () => {
 
         <Row>
           <Button type="primary" htmlType="submit" block>
-            Add
+            Add TODO
           </Button>
         </Row>
       </Form>
