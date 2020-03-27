@@ -20,6 +20,6 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 - Add, delete and complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
-- Polyfills for IE11 support
+- Polyfills for IE11 support (only in production)
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
