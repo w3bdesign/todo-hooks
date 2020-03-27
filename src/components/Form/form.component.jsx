@@ -4,7 +4,7 @@ import { TagsOutlined } from '@ant-design/icons'; // Icon
 
 import { openNotification } from '../../functions/openNotification';
 
-//import Calendar from '../Calendar/calendar.component';
+import Calendar from '../Calendar/calendar.component';
 
 import { TodoContext } from '../../App';
 
@@ -46,9 +46,9 @@ const TodoForm = () => {
 
           <Col>
             <Form.Item label="Date picker">
-              {
-                //<Calendar onChange={() => console.log('Change!')} />
-              }
+              
+                <Calendar onChange={() => console.log('Change!')} />
+              
             </Form.Item>
           </Col>
         </Row>
