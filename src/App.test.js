@@ -20,7 +20,6 @@ Object.defineProperty(window, 'matchMedia', {
 
 test('Renders Add TODO', () => {
   const { getAllByTestId } = render(<App />);
-  const linkElement = getAllByTestId(/todo/i).toString();
-  console.log(linkElement)
-  expect(linkElement[0]).toContain("[");
+  const linkElement = getAllByTestId(/todo/i).toString();  
+  expect(linkElement[0]).toBe("[");
 });

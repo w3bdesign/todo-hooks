@@ -24,10 +24,10 @@ export const TodoForm = () => {
               'Title must be a minimum of 5 letters'
             );
           }
-        }} 
+        }}
       >
         <h3>
-          <b data-testid='todo'>Add TODO item</b>
+          <b data-testid="todo">Add TODO item</b>
         </h3>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>

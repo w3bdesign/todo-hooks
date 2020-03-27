@@ -12,7 +12,6 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 ## Currently working on:
 
 - Adding Ant Design DatePicker for date selection.
-- Ensure everything works flawlessly with useContext and useReducer.
 
 ## Current features:
 
@@ -21,6 +20,6 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 - Add, delete and complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
-- Polyfills for IE11 support
+- Polyfills for IE11 support (only in production)
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
