@@ -8,9 +8,3 @@ export const FORM_INITIAL_STATE = [
     dataIndex: 0
   }
 ];
-
-export const COMPLETED_INITIAL_STATE = {
-  key: uuidv4(),
-  dataindex: 0,
-  completed: 'false'
-};
