@@ -27,6 +27,7 @@ export function todoReducer(state, action) {
       const filteredTodos = state.filter(item => item.key !== action.payload);
       return filteredTodos;
     default:
+      openNotification('bottomLeft', 'An error has occured!');
       throw new Error();
   }
 }
