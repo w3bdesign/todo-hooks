@@ -3,23 +3,24 @@
 
 # React TODO with Hooks
 
-Currently working on a major refactor.
+The initial release of this project only used useState for state.
 
-Check out the dev branch for updated progress.
+I have now done a major refactor in order to use useReducer and useContext.
+
+I have considered utilizing useMemo or useCallback, but I do not think the performance benefit is worth it at this point.
+
+## Currently working on:
+
+- Adding Ant Design DatePicker for date selection.
+- Ensure everything works flawlessly with useContext and useReducer.
 
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
-- React Hooks (useState)
+- React Hooks (useState, useReducer and useContext)
 - Add, delete and complete TODOs
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
-
-## TODO
-
-- Firebase and Firestore (or LocalStorage?) for authentication and storage of TODOs
-- Implement more components from Ant design?
-- Add more tests

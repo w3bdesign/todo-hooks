@@ -1,0 +1,27 @@
+div[name='todotext'] {
+  margin-bottom: 0px;
+}
+
+.App {
+  margin-top: 25px;
+}
+
+.ant-btn {
+  margin-top: 15px;
+}
+
+h3 {
+  text-align: center;
+}
+
+span[role='img'] {
+  color: red;
+}
+
+.true {
+  text-decoration: line-through;
+}
+
+.hideaction {
+  display: none;
+}
