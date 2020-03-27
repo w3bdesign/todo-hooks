@@ -1,16 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { Input, Button, Form, Row, Col } from 'antd';
-import { TagsOutlined } from '@ant-design/icons'; // Icon
+import { TagsOutlined } from '@ant-design/icons'; 
 
 import { openNotification } from '../../functions/openNotification';
 
-import Calendar from '../Calendar/calendar.component';
+//import Calendar from '../Calendar/calendar.component';
 
 import { TodoContext } from '../../App';
 
 const TodoForm = () => {
   const [form, setForm] = useState();
-  const [todos, dispatchTodos] = useContext(TodoContext);
+  const [, dispatchTodos] = useContext(TodoContext);
 
   return (
     <>
@@ -46,9 +46,9 @@ const TodoForm = () => {
 
           <Col>
             <Form.Item label="Date picker">
-              
-                <Calendar onChange={() => console.log('Change!')} />
-              
+              {
+                //<Calendar onChange={() => console.log('Change!')} />
+              }
             </Form.Item>
           </Col>
         </Row>
