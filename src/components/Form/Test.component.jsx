@@ -8,7 +8,7 @@ import { openNotification } from '../../functions/openNotification';
 
 import { TodoContext } from '../../App';
 
-const TodoForm = () => {
+export const Test = () => {
   const [form, setForm] = useState();
   const [, dispatchTodos] = useContext(TodoContext);
 
@@ -62,5 +62,3 @@ const TodoForm = () => {
     </>
   );
 };
-
-export default TodoForm;
