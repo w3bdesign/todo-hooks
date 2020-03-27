@@ -12,7 +12,6 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 ## Currently working on:
 
 - Adding Ant Design DatePicker for date selection.
-- Ensure everything works flawlessly with useContext and useReducer.
 
 ## Current features:
 
