@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 import './App.css';
 
-import {Test} from './components/Form/Test.component';
+import { TodoForm } from './components/Form/Form.component';
 import { todoReducer } from './components/Form/FormReducer';
 
 import { FORM_INITIAL_STATE } from './constants/INITIAL_STATE';
@@ -25,7 +25,7 @@ const App = () => {
         </Row>
         <Row type="flex" justify="center">
           <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <Test />
+            <TodoForm />
           </Col>
         </Row>
       </div>
