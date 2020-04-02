@@ -13,6 +13,10 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 
 - Adding Ant Design DatePicker for date selection.
 
+## TODO
+
+- Add Firebase for proper authentication
+
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
