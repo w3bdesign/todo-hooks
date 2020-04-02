@@ -1,12 +1,15 @@
 import React from 'react';
-import { DatePicker } from 'antd';
+import { Col, DatePicker, Form } from 'antd';
 
 const onChangeDate = dateString => {
+  console.log('Date change!');
   console.log(dateString);
 };
 
-const Calendar = () => {
-  return <DatePicker onChange={onChangeDate} />;
-};
-
-export default Calendar;
+export const Calendar = () => (
+  <Col>
+    <Form.Item label="Date picker">
+      <DatePicker onChange={onChangeDate} />
+    </Form.Item>
+  </Col>
+);

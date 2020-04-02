@@ -14,7 +14,6 @@ export const TodoContext = createContext();
 
 const App = () => {
   const [todos, dispatchTodos] = useReducer(todoReducer, FORM_INITIAL_STATE);
-
   return (
     <TodoContext.Provider value={[todos, dispatchTodos]}>
       <Row type="flex" justify="center">
@@ -30,5 +29,4 @@ const App = () => {
     </TodoContext.Provider>
   );
 };
-
 export default App;
