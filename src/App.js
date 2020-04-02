@@ -17,18 +17,16 @@ const App = () => {
 
   return (
     <TodoContext.Provider value={[todos, dispatchTodos]}>
-      <div className="App">
-        <Row type="flex" justify="center">
-          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <Table dataSource={todos} columns={FORM_COLUMNS} />
-          </Col>
-        </Row>
-        <Row type="flex" justify="center">
-          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <TodoForm />
-          </Col>
-        </Row>
-      </div>
+      <Row type="flex" justify="center">
+        <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <Table dataSource={todos} columns={FORM_COLUMNS} />
+        </Col>
+      </Row>
+      <Row type="flex" justify="center">
+        <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+          <TodoForm />
+        </Col>
+      </Row>
     </TodoContext.Provider>
   );
 };
