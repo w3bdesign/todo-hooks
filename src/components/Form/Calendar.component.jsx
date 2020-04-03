@@ -3,10 +3,10 @@ import { Col, DatePicker, Form } from 'antd';
 
 // <DatePicker onChange={onChangeDate} />
 
-const onChangeDate = (_,dateString, setForm ) => {
+const onChangeDate = (_,dateString ) => {
   console.log('Date change!');  
   console.log(dateString); 
-  console.log(setForm); 
+  
 };
 
 export const Calendar = ({setForm}) => (

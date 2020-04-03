@@ -31,11 +31,11 @@ export const TodoForm = () => {
           <FormInput setForm={setForm} />
           {form && form.length >= 5 ? <Calendar setForm={setForm} /> : null}
           {form && form.length < 5 ? (
-            <h3> Title length must be more than 5</h3>
+            <h3>Title length must be more than 5</h3>
           ) : null}
         </Row>
         <Row>
-          <Button type="primary" htmlType="submit" block>
+          <Button type="primary" htmlType="submit" block disabled>
             Add TODO
           </Button>
           {
