@@ -1,60 +1,53 @@
 import React, { useState, useContext } from 'react';
-import { Input, Button, Form, Row, Col } from 'antd';
-import { TagsOutlined } from '@ant-design/icons';
+import { Button, Form, Row } from 'antd';
 
 import { openNotification } from '../../functions/openNotification';
 
-//import Calendar from '../Calendar/calendar.component';
+import { Calendar } from './Calendar.component';
+import { FormInput } from './FormInput.component';
+import { FormHeader } from './FormHeader.component';
 
 import { TodoContext } from '../../App';
 
 export const TodoForm = () => {
   const [form, setForm] = useState();
-  const [, dispatchTodos] = useContext(TodoContext);
+  const [todos, dispatchTodos] = useContext(TodoContext);
+
+  const formSubmit = () => {
+    console.log('Form:');
+    console.log(form);
+    if (form && form.length >= 5) {
+      dispatchTodos({ type: 'ADD_TODO', payload: form });
+    } else {
+      openNotification('bottomLeft', 'Title must be a minimum of 5 letters');
+    }
+  };
 
   return (
     <>
-      <Form
-        onFinish={() => {
-          if (form && form.length >= 5) {
-            dispatchTodos({ type: 'ADD_TODO', payload: form });
-          } else {
-            openNotification(
-              'bottomLeft',
-              'Title must be a minimum of 5 letters'
-            );
-          }
-        }}
-      >
-        <h3>
-          <b data-testid="todo">Add TODO item</b>
-        </h3>
+      <Form onFinish={formSubmit}>
+        <FormHeader />
         <Row type="flex" justify="center">
-          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-            <Form.Item label="Title">
-              <Input
-                prefix={
-                  <TagsOutlined /> // Icon
-                }
-                onChange={e => {
-                  setForm(e.target.value);
-                }}
-              />
-            </Form.Item>
-          </Col>
-
-          <Col>
-            <Form.Item label="Date picker">
-              {
-                //<Calendar onChange={() => console.log('Change!')} />
-              }
-            </Form.Item>
-          </Col>
+          <FormInput setForm={setForm} />
+          {form && form.length >= 5 ? <Calendar setForm={setForm} /> : null}
+          {form && form.length < 5 ? (
+            <h3>Title length must be more than 5</h3>
+          ) : null}
         </Row>
-
         <Row>
-          <Button type="primary" htmlType="submit" block>
+          <Button type="primary" htmlType="submit" block disabled>
             Add TODO
+          </Button>
+          {
+            // DEBUG
+          }
+          <Button
+            type="primary"
+            htmlType="submit"
+            block
+            onClick={() => console.log(todos)}
+          >
+            DEBUG Todos
           </Button>
         </Row>
       </Form>
