@@ -10,7 +10,9 @@ div[name='todotext'] {
   margin-top: 15px;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   text-align: center;
 }
 
@@ -26,6 +28,7 @@ span[role='img'] {
   display: none;
 }
 
-.CalendarLabel {
- margin-left: 50px;
+.CalendarLabel,
+.TitleLength {
+  margin-left: 30px;
 }

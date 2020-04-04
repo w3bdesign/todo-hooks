@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Button, Form, Row, Typography  } from 'antd';
+import { Button, Form, Row, Typography } from 'antd';
 
 import { openNotification } from '../../utils/functions/openNotification';
 
@@ -14,7 +14,7 @@ export const TodoForm = () => {
   // Could replace useState with useReducer but I decided to keep things simple
   const [form, setForm] = useState();
   const [date, setDate] = useState();
-  const [todos, dispatchTodos] = useContext(TodoContext);
+  const [, dispatchTodos] = useContext(TodoContext);
 
   const hasDate = date ? true : false;
 
@@ -29,36 +29,19 @@ export const TodoForm = () => {
   return (
     <>
       <Form onFinish={formSubmit}>
-      <Title data-testid="todo" level={4}>Add TODO item</Title>
+        <Title data-testid="todo" level={4}>
+          Add TODO item
+        </Title>
         <Row type="flex" justify="center">
           <FormInput data-testid="todo" setForm={setForm} />
           {form && form.length >= 5 ? <Calendar setDate={setDate} /> : null}
           {form && form.length < 5 ? (
-            <h3>Title length must be more than 5</h3>
+            <Title className="TitleLength" type="danger" level={4}>Length must be more than 5</Title>
           ) : null}
         </Row>
         <Row>
           <Button type="primary" htmlType="submit" block disabled={!hasDate}>
             Add TODO
-          </Button>
-          {
-            // DEBUG
-          }
-          <Button
-            type="primary"
-            block
-            onClick={() => {
-              console.log('Todos:');
-              console.log(todos);
-              console.log('Form:');
-              console.log(form);
-              console.log('Date:');
-              console.log(date);
-              console.log('hasDate:');
-              console.log(hasDate);
-            }}
-          >
-            DEBUG Todos | DEBUG form | DEBUG date | DEBUG hasDate
           </Button>
         </Row>
       </Form>
