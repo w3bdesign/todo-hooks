@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { openNotification } from '../../utils/functions/openNotification';
+import { openNotification } from './openNotification';
 
 export function todoReducer(state, action) {
   const [title, date] = action.payload;
