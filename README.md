@@ -11,7 +11,7 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 
 ## Currently working on:
 
-- Implementing Firebase
+- Implementing Firebase.
 
 ## TODO
 
