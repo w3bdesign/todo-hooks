@@ -1,15 +1,17 @@
 import React, { useState, useContext } from 'react';
-import { Button, Form, Row } from 'antd';
+import { Button, Form, Row, Typography  } from 'antd';
 
-import { openNotification } from '../../functions/openNotification';
+import { openNotification } from '../../utils/functions/openNotification';
 
 import { Calendar } from './Calendar.component';
 import { FormInput } from './FormInput.component';
-import { FormHeader } from './FormHeader.component';
 
 import { TodoContext } from '../../App';
 
+const { Title } = Typography;
+
 export const TodoForm = () => {
+  // Could replace useState with useReducer but I decided to keep things simple
   const [form, setForm] = useState();
   const [date, setDate] = useState();
   const [todos, dispatchTodos] = useContext(TodoContext);
@@ -27,9 +29,9 @@ export const TodoForm = () => {
   return (
     <>
       <Form onFinish={formSubmit}>
-        <FormHeader />
+      <Title level={4}>Add TODO item</Title>
         <Row type="flex" justify="center">
-          <FormInput setForm={setForm} />
+          <FormInput data-testid="todo" setForm={setForm} />
           {form && form.length >= 5 ? <Calendar setDate={setDate} /> : null}
           {form && form.length < 5 ? (
             <h3>Title length must be more than 5</h3>

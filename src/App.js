@@ -7,8 +7,8 @@ import './App.css';
 import { TodoForm } from './components/Form/Form.component';
 import { todoReducer } from './components/Form/FormReducer';
 
-import { FORM_INITIAL_STATE } from './constants/INITIAL_STATE';
-import { FORM_COLUMNS } from './constants/FORM_COLUMNS';
+import { FORM_INITIAL_STATE } from './utils/constants/INITIAL_STATE';
+import { FORM_COLUMNS } from './utils/constants/FORM_COLUMNS';
 
 export const TodoContext = createContext();
 
