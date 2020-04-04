@@ -11,13 +11,14 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 
 ## Currently working on:
 
-- Adding Ant Design DatePicker for date selection.
+- Implementing Firebase
 
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
 - React Hooks (useState, useReducer and useContext)
 - Add, delete and complete TODOs
+- Ant Design DatePicker for date selection
 - Uuid for unique React key identifier
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support (only in production)
