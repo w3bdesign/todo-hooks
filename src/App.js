@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 import './App.css';
 
 import { TodoForm } from './components/Form/Form.component';
-import { todoReducer } from './utils/functions/myformReducer';
+import { todoReducer } from './utils/functions/formReducer';
 
 import { FORM_INITIAL_STATE } from './utils/constants/INITIAL_STATE';
 import { FORM_COLUMNS } from './utils/constants/FORM_COLUMNS';
