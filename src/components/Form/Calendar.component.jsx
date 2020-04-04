@@ -9,10 +9,10 @@ const onChangeDate = (_,dateString ) => {
   
 };
 
-export const Calendar = ({setForm}) => (
+export const Calendar = ({setDate}) => (
   <Col>
     <Form.Item label="Date picker">
-      <DatePicker onChange={(_, dateString) => setForm(dateString)} />
+      <DatePicker onChange={(_, dateString) => setDate(dateString)} />
     </Form.Item>
   </Col>
 );

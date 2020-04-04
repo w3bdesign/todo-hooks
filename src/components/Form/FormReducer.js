@@ -2,11 +2,15 @@ import { v4 as uuidv4 } from 'uuid';
 import { openNotification } from '../../functions/openNotification';
 
 export function todoReducer(state, action) {
+  console.log(action.payload);
+
+  
   switch (action.type) {
     case 'ADD_TODO':
       openNotification('bottomLeft', 'TODO added');
       return state.concat({
-        title: action.payload,
+        title: action.payload[0],
+        date:  action.payload[1],
         key: uuidv4(),
         completed: 'false'
       });
