@@ -25,7 +25,7 @@ export const TodoForm = () => {
     console.log(date);
     console.log('End form submit ....');
     if (form && date && form.length >= 5) {
-      dispatchTodos({ type: 'ADD_TODO', payload: form });
+      dispatchTodos({ type: 'ADD_TODO', payload: [form, date] });
     } else {
       openNotification('bottomLeft', 'Title must be a minimum of 5 letters');
     }

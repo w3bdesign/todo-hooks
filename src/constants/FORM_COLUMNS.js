@@ -11,13 +11,16 @@ export const FORM_COLUMNS = [
     key: 'title',
     render: (text, record) => {
       return <Title record={record}>{text}</Title>;
-    }
+    },
   },
 
   {
     title: 'Date',
     dataIndex: 'date',
-    key: 'date'
+    key: 'date',
+    render: (text, record) => {
+      return <Title record={record}>{text}</Title>;
+    },
   },
 
   {
@@ -32,6 +35,6 @@ export const FORM_COLUMNS = [
           <Delete record={record} />
         </>
       );
-    }
-  }
+    },
+  },
 ];
