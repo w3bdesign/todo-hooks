@@ -25,3 +25,7 @@ span[role='img'] {
 .hideaction {
   display: none;
 }
+
+.CalendarLabel {
+ margin-left: 50px;
+}

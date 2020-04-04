@@ -12,18 +12,11 @@ import { TodoContext } from '../../App';
 export const TodoForm = () => {
   const [form, setForm] = useState();
   const [date, setDate] = useState();
-
   const [todos, dispatchTodos] = useContext(TodoContext);
 
   const hasDate = date ? true : false;
 
   const formSubmit = () => {
-    console.log('Form submit ....');
-    console.log('Form:');
-    console.log(form);
-    console.log('Date:');
-    console.log(date);
-    console.log('End form submit ....');
     if (form && date && form.length >= 5) {
       dispatchTodos({ type: 'ADD_TODO', payload: [form, date] });
     } else {
