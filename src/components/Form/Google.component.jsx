@@ -9,6 +9,7 @@ export const Google = () => {
         <Button icon={<GoogleOutlined />} block>
           Google Login
         </Button>
+        Currently logged in user: NONE
       </Col>
     </Row>
   );
