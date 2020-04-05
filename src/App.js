@@ -6,7 +6,10 @@ import './App.css';
 
 import { TodoForm } from './components/Form/Form.component';
 import { Google } from './components/Form/Google.component';
+
 import { todoReducer } from './utils/functions/formReducer';
+//import { firebaseContext } from './utils/firebase/firebaseContext';
+import Firebase, { FirebaseContext } from './utils/firebase/';
 
 import { FORM_INITIAL_STATE } from './utils/constants/INITIAL_STATE';
 import { FORM_COLUMNS } from './utils/constants/FORM_COLUMNS';
@@ -17,6 +20,7 @@ const App = () => {
   const [todos, dispatchTodos] = useReducer(todoReducer, FORM_INITIAL_STATE);
   return (
     <TodoContext.Provider value={[todos, dispatchTodos]}>
+      <FirebaseContext.Provider value={new Firebase()}>
       <Google />
       <Row>
         <Col>&nbsp;</Col>
@@ -31,6 +35,7 @@ const App = () => {
           <TodoForm />
         </Col>
       </Row>
+      </FirebaseContext.Provider>
     </TodoContext.Provider>
   );
 };
