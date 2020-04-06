@@ -9,9 +9,9 @@ I have now done a major refactor in order to use useReducer and useContext.
 
 I have considered utilizing useMemo or useCallback, but I do not think the performance benefit is worth it at this point.
 
-## Currently working on:
+## TODO
 
-- Implementing Firebase.
+- Implement Firebase.
 
 ## Current features:
 
