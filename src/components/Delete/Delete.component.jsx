@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../App';
 
-import { Popconfirm } from 'antd';
+import { Popconfirm, Button } from 'antd';
 
 export const Delete = ({ record }) => {
   const [, dispatchTodos] = useContext(TodoContext);
@@ -12,7 +12,9 @@ export const Delete = ({ record }) => {
         dispatchTodos({ type: 'DELETE_TODO', payload: record.key });
       }}
     >
-      <a href="#delete">Delete </a>
+      <Button type="primary" danger>
+        Delete
+      </Button>
     </Popconfirm>
   );
 };

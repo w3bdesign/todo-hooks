@@ -31,7 +31,7 @@ export const FORM_COLUMNS = [
       return (
         <>
           <Complete record={record} />
-          {' | '}
+          {' '}
           <Delete record={record} />
         </>
       );

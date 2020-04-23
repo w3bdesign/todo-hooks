@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../App';
 
+import { Button } from 'antd';
+
 export const Complete = ({ record }) => {
   const [, dispatchTodos] = useContext(TodoContext);
   return (
@@ -10,7 +12,7 @@ export const Complete = ({ record }) => {
         dispatchTodos({ type: 'COMPLETE_TODO', payload: record.key });
       }}
     >
-      <span>Complete</span>
+      <Button type="primary">Complete</Button>
     </a>
   );
 };
