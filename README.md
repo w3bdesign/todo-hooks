@@ -9,10 +9,6 @@ I have now done a major refactor in order to use useReducer and useContext.
 
 I have considered utilizing useMemo or useCallback, but I do not think the performance benefit is worth it at this point.
 
-## TODO
-
-- Implement Firebase.
-
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
@@ -24,3 +20,7 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 - Polyfills for IE11 support (only in production)
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
+
+## TODO
+
+- Implement Firebase
