@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/w3bdesign/todo-hooks.svg?style=svg)](https://circleci.com/gh/w3bdesign/todo-hooks)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_todo-hooks&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_todo-hooks)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/664a6adc-81e2-41cc-83e2-f0223f48ba70/deploy-status)](https://app.netlify.com/sites/react-todo-hooks/deploys)
 
 # React TODO with Hooks
