@@ -21,6 +21,7 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 - Polyfills for IE11 support (only in production)
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
+- SonarGate cloud code quality testing
 
 ## TODO
 
