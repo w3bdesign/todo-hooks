@@ -39,6 +39,6 @@
     "@testing-library/react-hooks": "^3.2.1",
     "eslint": "^6.6.0",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^4.0.0"
+    "eslint-plugin-react-hooks": "^4.0.1"
   }
 }
