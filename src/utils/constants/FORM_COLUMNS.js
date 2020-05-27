@@ -30,9 +30,7 @@ export const FORM_COLUMNS = [
     render: (text, record) => {
       return (
         <>
-          <Complete record={record} />
-          {' '}
-          <Delete record={record} />
+          <Complete record={record} /> <Delete record={record} />
         </>
       );
     },
