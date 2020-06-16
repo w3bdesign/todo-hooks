@@ -25,4 +25,5 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 
 ## TODO
 
+- Add filter functionality so we can filter based on completed and active TODOs
 - Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
