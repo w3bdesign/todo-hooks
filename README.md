@@ -25,4 +25,4 @@ I have considered utilizing useMemo or useCallback, but I do not think the perfo
 
 ## TODO
 
-- Implement Firebase
+- Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
