@@ -4,7 +4,7 @@ export const FORM_INITIAL_STATE = [
   {
     key: uuidv4(),
     title: 'Use Hooks in a React application (Default TODO from STATE)',
-    date: '2020-04-15',
+    date: '2020-06-19',
     completed: 'false',
     dataIndex: 0,
   },

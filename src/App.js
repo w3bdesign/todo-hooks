@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 import './App.css';
 
-import { TodoForm } from './components/Form/Form.component';
+import { AddTodoForm } from './components/Form/AddTodoForm.component';
 import { todoReducer } from './utils/functions/formReducer';
 
 import { FORM_INITIAL_STATE } from './utils/constants/INITIAL_STATE';
@@ -23,7 +23,7 @@ const App = () => {
       </Row>
       <Row type="flex" justify="center">
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-          <TodoForm />
+          <AddTodoForm />
         </Col>
       </Row>
     </TodoContext.Provider>

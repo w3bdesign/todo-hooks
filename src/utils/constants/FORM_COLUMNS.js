@@ -9,11 +9,17 @@ export const FORM_COLUMNS = [
     title: 'Title',
     dataIndex: 'title',
     key: 'title',
+    filters: [
+      {
+        text: 'Hide Completed',
+        value: 'hide',
+      },
+    ],
+    onFilter: (value, record) => record.completed === 'false',
     render: (text, record) => {
       return <Title record={record}>{text}</Title>;
     },
   },
-
   {
     title: 'Date',
     dataIndex: 'date',
@@ -22,7 +28,6 @@ export const FORM_COLUMNS = [
       return <Title record={record}>{text}</Title>;
     },
   },
-
   {
     title: 'Action',
     key: 'action',
@@ -30,7 +35,8 @@ export const FORM_COLUMNS = [
     render: (text, record) => {
       return (
         <>
-          <Complete record={record} /> <Delete record={record} />
+          <Complete record={record} />
+          <Delete record={record} />
         </>
       );
     },
