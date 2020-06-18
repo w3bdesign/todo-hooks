@@ -18,8 +18,8 @@ Object.defineProperty(window, 'matchMedia', {
   }))
 });
 
-test('Renders Add TODO', () => {
-  const { getAllByTestId } = render(<App />);
-  const linkElement = getAllByTestId(/todo/i).toString();  
-  expect(linkElement[0]).toBe("[");
+test('Renders Title', () => {
+  const { getByText } = render(<App />); 
+  const linkElement = getByText(/Complete/i);  
+  expect(linkElement).toBeInTheDocument();
 });
