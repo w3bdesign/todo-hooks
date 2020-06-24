@@ -28,5 +28,4 @@ Live URL: https://react-todo-hooks.netlify.app/
 
 ## TODO
 
-- Add filter functionality so we can filter based on completed and active TODOs
 - Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
