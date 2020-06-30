@@ -16,6 +16,7 @@ Live URL: https://react-todo-hooks.netlify.app/
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
 - React Hooks (useState, useReducer and useContext)
+- Testing with @testing-library/react and @testing-library/user-event
 - Add, delete and complete TODOs
 - Ant Design filter functionality - hide completed TODOs
 - Ant Design DatePicker for date selection
