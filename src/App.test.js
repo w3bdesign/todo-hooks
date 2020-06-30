@@ -75,14 +75,14 @@ describe('Verify that click actions work', () => {
 });
 
 describe('Ensure we can add new TODOs', () => {
-  test('Type some sample text in title and check that the text is visible', () => {
+  test('Type some text in title and check that the text is visible', () => {
     const { getByLabelText } = render(<App />);
     const TodoInput = getByLabelText('Title');
     userEvent.type(TodoInput, 'Todotext');
     expect(TodoInput).toHaveValue('Todotext');
   });
 
-  test('Type some sample text in title and check that date input is visible', () => {
+  test('Type some text in title and check that the date input is visible', () => {
     const { getByLabelText } = render(<App />);
     const TodoInput = getByLabelText('Title');
     userEvent.type(TodoInput, 'Todotext');
