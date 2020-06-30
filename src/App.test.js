@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+//import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -95,4 +96,16 @@ describe('Ensure we can add new TODOs', () => {
     const DateInput = queryByText('Select a date');
     expect(DateInput).not.toBeInTheDocument();
   });
+
+  test('Check that we can not add TODOs by only typing in the title, check that "Add TODO" is disabled', () => {
+    const { getByRole, getByLabelText } = render(<App />);
+    const TodoInput = getByLabelText('Title');
+    userEvent.type(TodoInput, 'Todotext');
+    const AddTodo = getByRole('button', {
+      name: /Add TODO/i,
+    });
+    expect(AddTodo).toBeDefined();
+  });
+
+  
 });
