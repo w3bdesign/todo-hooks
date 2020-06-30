@@ -1,17 +1,15 @@
 import React from 'react';
-import { Typography } from 'antd';
-
-const { Paragraph } = Typography;
 
 export const Title = ({ children, record }) => {
   return (
-    <Paragraph
+    <h4
+    style={{textAlign: "left"}}
       className={
         // Display text-decoration: line-through if TODO is completed (true)
         record.completed === 'true' ? 'true' : 'false'
       }
     >
       {children}
-    </Paragraph>
+    </h4>
   );
 };
