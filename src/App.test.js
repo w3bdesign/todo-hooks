@@ -18,7 +18,7 @@ Object.defineProperty(window, 'matchMedia', {
   }))
 });
 
-test('Renders Title', () => {
+test('Renders Complete', () => {
   const { getByText } = render(<App />); 
   const linkElement = getByText(/Complete/i);  
   expect(linkElement).toBeInTheDocument();
