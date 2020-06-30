@@ -29,11 +29,11 @@ export const AddTodoForm = () => {
   return (
     <>
       <Form onFinish={formSubmit}>
-        <Title data-testid="todo" level={4}>
+        <Title level={4}>
           Add TODO item
         </Title>
         <Row type="flex" justify="center">
-          <FormInput data-testid="todo" setForm={setForm} />
+          <FormInput setForm={setForm} />
           {form && form.length >= 5 ? <Calendar setDate={setDate} /> : null}
           {form && form.length < 5 ? (
             <Title className="TitleLength" type="danger" level={4}>Length must be more than 5</Title>

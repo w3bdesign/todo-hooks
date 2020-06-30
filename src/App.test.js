@@ -24,8 +24,6 @@ describe('Check for existing text strings on page', () => {
     const { getByRole } = render(<App />);
     const CompleteButton = getByRole('button', { name: /Complete/i });
     expect(CompleteButton).toBeInTheDocument();
-
-    //screen.debug()
   });
 
   test('Use Hooks in a React application is in the document', () => {
@@ -73,5 +71,28 @@ describe('Verify that click actions work', () => {
     });
     userEvent.click(CancelDelete);
     expect(UseHooks).toBeInTheDocument();
+  });
+});
+
+describe('Ensure we can add new TODOs', () => {
+  test('Type some sample text in title and check that the text is visible', () => {
+    const { getByLabelText } = render(<App />);
+    const TodoInput = getByLabelText('Title');
+    userEvent.type(TodoInput, 'Todotext');
+    expect(TodoInput).toHaveValue('Todotext');
+  });
+
+  test('Type some sample text in title and check that date input is visible', () => {
+    const { getByLabelText } = render(<App />);
+    const TodoInput = getByLabelText('Title');
+    userEvent.type(TodoInput, 'Todotext');
+    const DateInput = getByLabelText('Select a date');
+    expect(DateInput).toBeVisible();
+  });
+
+  test('Check that date input is not visible by default', () => {
+    const { queryByText } = render(<App />);
+    const DateInput = queryByText('Select a date');
+    expect(DateInput).not.toBeInTheDocument();
   });
 });
