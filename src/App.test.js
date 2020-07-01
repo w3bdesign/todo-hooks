@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  render,
-  screen,
-  act,
-  fireEvent,
-  waitFor,
-  queryByText,
-} from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -121,14 +114,13 @@ describe('Ensure we can add new TODOs', () => {
     const SelectDateInput = screen.getByPlaceholderText(/select date/i);
     fireEvent.keyDown(SelectDateInput, { key: 'Enter', code: 'Enter' });
 
-    const CalendarDate = screen.getByText(/15/i);    
+    const CalendarDate = screen.getByText(/15/i);
 
     fireEvent.click(CalendarDate);
 
     const AddTodoButton = getByRole('button', {
       name: /Add TODO/i,
     });
-
     expect(AddTodoButton).toBeEnabled();
   });
 });
