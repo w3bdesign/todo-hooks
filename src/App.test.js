@@ -1,6 +1,5 @@
 import React from 'react';
-//import { render, screen } from '@testing-library/react';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -42,7 +41,7 @@ describe('Verify that click actions work', () => {
     userEvent.click(CompleteButton);
     expect(UseHooks.className).toContain('true');
   });
-  test('Do not click on Complete and do not show TODO as completed', () => {
+  test('Do not show TODO as completed unless we click on Complete', () => {
     const { getByRole } = render(<App />);
     const UseHooks = getByRole('heading', { name: /Use Hooks in a React/i });
     expect(UseHooks.className).toContain('false');
@@ -97,15 +96,31 @@ describe('Ensure we can add new TODOs', () => {
     expect(DateInput).not.toBeInTheDocument();
   });
 
-  test('Check that we can not add TODOs by only typing in the title, check that "Add TODO" is disabled', () => {
+  test('If we enter the title and dont select a date, check that "Add TODO" is disabled', () => {
     const { getByRole, getByLabelText } = render(<App />);
     const TodoInput = getByLabelText('Title');
     userEvent.type(TodoInput, 'Todotext');
     const AddTodo = getByRole('button', {
       name: /Add TODO/i,
     });
-    expect(AddTodo).toBeDefined();
+    expect(AddTodo).toBeDisabled();
   });
 
-  
+  test('If we enter the title and click to select a date, check that "Add Todo" is enabled"', async () => {
+    const { getByRole, getByLabelText } = render(<App />);
+    const TodoInput = getByLabelText('Title');
+
+    userEvent.type(TodoInput, 'Todotext');
+    const SelectDateInput = screen.getByPlaceholderText(/select date/i);
+    fireEvent.keyDown(SelectDateInput, { key: 'Enter', code: 'Enter' });
+
+    const CalendarDate = screen.getByText(/15/i);
+
+    fireEvent.click(CalendarDate);
+
+    const AddTodoButton = getByRole('button', {
+      name: /Add TODO/i,
+    });
+    expect(AddTodoButton).toBeEnabled();
+  });
 });
