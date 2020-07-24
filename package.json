@@ -38,6 +38,6 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
-    "@testing-library/user-event": "^12.0.12"
+    "@testing-library/user-event": "^12.0.13"
   }
 }
