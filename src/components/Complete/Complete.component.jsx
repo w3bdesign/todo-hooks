@@ -9,7 +9,10 @@ export const Complete = ({ record }) => {
     <a
       href="#complete"
       onClick={() => {
-        dispatchTodos({ type: 'COMPLETE_TODO', payload: record.key });
+        dispatchTodos({
+          type: 'COMPLETE_TODO',
+          payload: record.key,
+        });
       }}
     >
       <Button type="primary">Complete</Button>

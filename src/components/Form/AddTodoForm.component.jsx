@@ -10,7 +10,7 @@ import { TodoContext } from '../../App';
 
 const { Title } = Typography;
 
-export const AddTodoForm = () => { 
+export const AddTodoForm = () => {
   const [form, setForm] = useState();
   const [date, setDate] = useState();
   const [, dispatchTodos] = useContext(TodoContext);
@@ -28,15 +28,15 @@ export const AddTodoForm = () => {
   return (
     <>
       <Form onFinish={formSubmit}>
-        <Title level={4}>
-          Add TODO item
-        </Title>
+        <Title level={4}>Add TODO item</Title>
         <Row type="flex" justify="center">
           <FormInput setForm={setForm} />
-          {form && form.length >= 5 ? <Calendar setDate={setDate} /> : null}
-          {form && form.length < 5 ? (
-            <Title className="TitleLength" type="danger" level={4}>Length must be more than 5</Title>
-          ) : null}
+          {form && form.length >= 5 && <Calendar setDate={setDate} />}
+          {form && form.length < 5 && (
+            <Title className="TitleLength" type="danger" level={4}>
+              Length must be more than 5
+            </Title>
+          )}
         </Row>
         <Row>
           <Button type="primary" htmlType="submit" block disabled={!hasDate}>
