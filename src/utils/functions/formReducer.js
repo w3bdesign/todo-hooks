@@ -7,24 +7,17 @@ export function todoReducer(state, action) {
   switch (action.type) {
     case 'ADD_TODO':
       openNotification('bottomLeft', 'TODO added');
-      return state.concat({
-        title: title,
-        date: date,
-        key: uuidv4(),
-        completed: 'false',
-      });
+      state.push({ title, date, key: uuidv4(), completed: 'false' });
+      break;
     case 'COMPLETE_TODO':
       openNotification('bottomLeft', 'TODO completed');
-      return state.map((todo) => {
-        if (todo.key === action.payload) {
-          return {
-            ...todo,
-            completed: 'true',
-          };
-        } else {
-          return todo;
-        }
-      });
+      const todoToComplete = state.filter(
+        (todo) => todo.key === action.payload
+      )[0];
+      if (todoToComplete) {
+        todoToComplete.completed = 'true';
+      }
+      break;
     case 'DELETE_TODO':
       openNotification('bottomLeft', 'TODO deleted');
       return state.filter((item) => item.key !== action.payload);
