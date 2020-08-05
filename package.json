@@ -1,14 +1,16 @@
 {
   "name": "todo-hooks",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "private": true,
   "dependencies": {
-    "antd": "^4.4.3",
+    "antd": "^4.5.2",
+    "immer": "^7.0.7",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "uuid": "^8.2.0"
+    "use-immer": "^0.4.1",
+    "uuid": "^8.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,11 +35,11 @@
   },
   "devDependencies": {
     "eslint": "6.8.0",
-    "@testing-library/react-hooks": "^3.3.0",
-    "eslint-plugin-react": "^7.20.3",
+    "@testing-library/react-hooks": "^3.4.1",
+    "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.7",
-    "@testing-library/user-event": "^12.0.11"
+    "@testing-library/user-event": "^12.1.0"
   }
 }
