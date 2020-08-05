@@ -6,20 +6,19 @@
 
 The initial release of this project only used useState for state.
 
-I have now done a major refactor in order to use useReducer and useContext.
-
-I have considered utilizing useMemo or useCallback, but I do not think the performance benefit is worth it at this point.
+I have now done a major refactor in order to use Immer, useImmerReducer and useContext.
 
 Live URL: https://react-todo-hooks.netlify.app/
 
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
-- React Hooks (useState, useReducer and useContext)
+- React Hooks (useState and useContext)
+- State management with Immer and useImmerReducer hook
 - Add, delete and complete TODOs
 - Ant Design filter functionality - hide completed TODOs
 - Ant Design DatePicker for date selection
-- Uuid for unique React key identifier
+- UUID for unique React key identifier
 - Pagination (multiple pages) for table
 - Polyfills for IE11 support (only in production)
 - Responsive layout for mobile devices
