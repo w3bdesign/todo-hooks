@@ -1,19 +1,21 @@
 import { v4 as uuidv4 } from 'uuid';
 import { openNotification } from './openNotification';
 
-export function todoReducer(state, action) {
-  const [title, date] = action.payload || "";
-  
+export function todoReducer(state, action, dataIndex) {
+  const [title, date] = action.payload || '';
 
   switch (action.type) {
     case 'ADD_TODO':
       openNotification('bottomLeft', 'TODO added');
-      return state.concat({
+      // We can modify state directly and treat it as an array because we are using Immer
+      state.unshift({
         title: title,
         date: date,
         key: uuidv4(),
         completed: 'false',
+        dataIndex: state.length - 1,
       });
+      break;
     case 'COMPLETE_TODO':
       openNotification('bottomLeft', 'TODO completed');
       return state.map((todo) => {
@@ -28,7 +30,9 @@ export function todoReducer(state, action) {
       });
     case 'DELETE_TODO':
       openNotification('bottomLeft', 'TODO deleted');
-      return state.filter((item) => item.key !== action.payload);    
+      // We can modify state directly and treat it as an array because we are using Immer
+      state.splice(dataIndex, 1);
+      break;
     default:
       openNotification('bottomLeft', 'An error has occured!');
       throw new Error();

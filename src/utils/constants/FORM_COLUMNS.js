@@ -15,7 +15,7 @@ export const FORM_COLUMNS = [
         value: 'hide',
       },
     ],
-    onFilter: (value, record) => record.completed === 'false',
+    onFilter: (_, record) => record.completed === 'false',
     render: (text, record) => {
       return <Title record={record}>{text}</Title>;
     },
@@ -32,7 +32,7 @@ export const FORM_COLUMNS = [
     title: 'Action',
     key: 'action',
     dataIndex: 'action',
-    render: (text, record) => {
+    render: (_, record) => {
       return (
         <>
           <Complete record={record} />

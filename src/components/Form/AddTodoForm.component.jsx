@@ -10,8 +10,7 @@ import { TodoContext } from '../../App';
 
 const { Title } = Typography;
 
-export const AddTodoForm = () => {
-  // Could replace useState with useReducer but I decided to keep things simple
+export const AddTodoForm = () => { 
   const [form, setForm] = useState();
   const [date, setDate] = useState();
   const [, dispatchTodos] = useContext(TodoContext);
