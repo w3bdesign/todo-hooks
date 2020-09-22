@@ -28,3 +28,4 @@ Live URL: https://react-todo-hooks.netlify.app/
 ## TODO
 
 - Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
+- Testing out Codespaces
