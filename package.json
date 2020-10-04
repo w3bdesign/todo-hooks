@@ -1,6 +1,6 @@
 {
   "name": "todo-hooks",
-  "version": "0.7.7",
+  "version": "0.7.8",
   "private": true,
   "dependencies": {
     "antd": "^4.6.6",
@@ -10,7 +10,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "use-immer": "^0.4.1",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "6.8.0",
+    "eslint": "^6.8.0",
     "@testing-library/react-hooks": "^3.4.2",
     "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-react-hooks": "^4.1.2",
