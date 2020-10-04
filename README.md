@@ -8,7 +8,7 @@ The initial release of this project only used useState for state.
 
 I have now done a major refactor in order to use Immer, useImmerReducer and useContext.
 
-Live URL: https://react-todo-hooks.netlify.app/
+Live URL: https://todohooks.dfweb.no/
 
 ## Current features:
 
@@ -28,4 +28,3 @@ Live URL: https://react-todo-hooks.netlify.app/
 ## TODO
 
 - Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
-- Testing out Codespaces
