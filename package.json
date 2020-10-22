@@ -8,7 +8,7 @@
     "react": "^16.14.0",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "3.4.4",
     "use-immer": "^0.4.1",
     "uuid": "^8.3.1"
   },
