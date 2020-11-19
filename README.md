@@ -24,7 +24,3 @@ Live URL: https://todohooks.dfweb.no/
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
 - SonarGate cloud code quality testing
-
-## TODO
-
-- Implement Firebase with https://www.npmjs.com/package/react-firebase-hooks
