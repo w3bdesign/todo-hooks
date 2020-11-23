@@ -13,7 +13,7 @@ Live URL: https://todohooks.dfweb.no/
 ## Current features:
 
 - Ant Design version 4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
-- React Hooks (useState and useContext)
+- React 17 with hooks (useState and useContext)
 - State management with Immer and useImmerReducer hook
 - Add, delete and complete TODOs
 - Ant Design filter functionality - hide completed TODOs
