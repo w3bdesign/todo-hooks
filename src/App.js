@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { useImmerReducer } from "use-immer";
+import { useImmerReducer } from 'use-immer';
 import { Table, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
@@ -14,7 +14,10 @@ import { FORM_COLUMNS } from './utils/constants/FORM_COLUMNS';
 export const TodoContext = createContext();
 
 const App = () => {
-  const [todos, dispatchTodos] = useImmerReducer(todoReducer, FORM_INITIAL_STATE);
+  const [todos, dispatchTodos] = useImmerReducer(
+    todoReducer,
+    FORM_INITIAL_STATE
+  );
   return (
     <TodoContext.Provider value={[todos, dispatchTodos]}>
       <Row type="flex" justify="center">
@@ -30,4 +33,5 @@ const App = () => {
     </TodoContext.Provider>
   );
 };
+
 export default App;
