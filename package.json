@@ -3,7 +3,7 @@
   "version": "0.8.1",
   "private": true,
   "dependencies": {
-    "antd": "^4.12.0",
+    "antd": "^4.12.1",
     "immer": "^8.0.1",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
