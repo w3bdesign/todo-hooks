@@ -8,8 +8,6 @@ The initial release of this project only used useState for state.
 
 I have now done a major refactor in order to use Immer, useImmerReducer and useContext.
 
-Live URL: https://todohooks.dfweb.no/
-
 ## Current features:
 
 - Ant Design version 4.16.5 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
