@@ -1,4 +1,3 @@
-[![CircleCI](https://circleci.com/gh/w3bdesign/todo-hooks.svg?style=svg)](https://circleci.com/gh/w3bdesign/todo-hooks)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_todo-hooks&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_todo-hooks)
 
 # React TODO with Hooks
