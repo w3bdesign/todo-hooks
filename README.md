@@ -20,3 +20,7 @@ I have now done a major refactor in order to use Immer, useImmerReducer and useC
 - Responsive layout for mobile devices
 - DevOps integration with CircleCI unit testing
 - SonarGate cloud code quality testing
+
+## TODO
+
+- Upgrade React to version 18 (waiting for https://github.com/immerjs/use-immer/issues/98)
