@@ -7,7 +7,7 @@
     "immer": "^9.0.12",
     "react": "^18.1.0",
     "react-app-polyfill": "^3.0.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
     "use-immer": "^0.7.0",
     "uuid": "^8.3.2"
