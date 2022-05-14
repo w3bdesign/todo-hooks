@@ -8,7 +8,7 @@ I have now done a major refactor in order to use Immer, useImmerReducer and useC
 
 ## Current features:
 
-- Ant Design version 4.19.2 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
+- Ant Design version 4.20.4 with the following components: Table, Row, Col, Popconfirm, Icon, Typography, Popup notification
 - React 18 with hooks (useState and useContext)
 - State management with Immer and useImmerReducer hook
 - Add, delete and complete TODOs
