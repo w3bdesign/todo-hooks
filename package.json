@@ -1,6 +1,6 @@
 {
   "name": "todo-hooks",
-  "version": "0.8.2",
+  "version": "1.6.5",
   "private": true,
   "dependencies": {
     "antd": "^4.20.4",
