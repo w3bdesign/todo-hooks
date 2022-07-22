@@ -1,4 +1,4 @@
-div[name='todotext'] {
+div[name="todotext"] {
   margin-bottom: 0px;
 }
 
@@ -17,7 +17,7 @@ h4 {
   text-align: center;
 }
 
-span[role='img'] {
+span[role="img"] {
   color: red;
 }
 

@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
-import { Button, Form, Row, Typography } from 'antd';
+import React, { useState, useContext } from "react";
+import { Button, Form, Row, Typography } from "antd";
 
-import { openNotification } from '../../utils/functions/openNotification';
+import { openNotification } from "../../utils/functions/openNotification";
 
-import { Calendar } from './Calendar.component';
-import { FormInput } from './FormInput.component';
+import { Calendar } from "./Calendar.component";
+import { FormInput } from "./FormInput.component";
 
-import { TodoContext } from '../../App';
+import { TodoContext } from "../../App";
 
 const { Title } = Typography;
 
@@ -19,9 +19,9 @@ export const AddTodoForm = () => {
 
   const formSubmit = () => {
     if (form && date && form.length >= 5) {
-      dispatchTodos({ type: 'ADD_TODO', payload: [form, date] });
+      dispatchTodos({ type: "ADD_TODO", payload: [form, date] });
     } else {
-      openNotification('bottomLeft', 'Title must be a minimum of 5 letters');
+      openNotification("bottomLeft", "Title must be a minimum of 5 letters");
     }
   };
 
