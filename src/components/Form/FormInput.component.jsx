@@ -1,15 +1,15 @@
-import React from 'react';
-import { Col, Form, Input } from 'antd';
-import { TagsOutlined } from '@ant-design/icons';
+import React from "react";
+import { Col, Form, Input } from "antd";
+import { TagsOutlined } from "@ant-design/icons";
 
-export const FormInput = ({setForm}) => (
+export const FormInput = ({ setForm }) => (
   <Col xs={24} sm={24} md={24} lg={12} xl={12}>
     <Form.Item label="Title" name="title">
       <Input
         prefix={
           <TagsOutlined /> // Icon
         }
-        onChange={e => {
+        onChange={(e) => {
           setForm(e.target.value);
         }}
       />
