@@ -8,7 +8,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "use-immer": "^0.7.0",
+    "use-immer": "^0.8.0",
     "uuid": "^9.0.0"
   },
   "scripts": {
