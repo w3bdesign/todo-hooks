@@ -2,7 +2,6 @@ import React, { createContext } from "react";
 import { useImmerReducer } from "use-immer";
 import { Table, Row, Col } from "antd";
 
-import "antd/dist/antd.css";
 import "./App.css";
 
 import { AddTodoForm } from "./components/Form/AddTodoForm.component";

@@ -1,9 +1,9 @@
 {
   "name": "todo-hooks",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "private": true,
   "dependencies": {
-    "antd": "^4.24.3",
+    "antd": "^5.0.0",
     "immer": "^9.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "eslint": "^8.28.0", 
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react": "^7.31.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3"
