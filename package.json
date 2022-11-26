@@ -3,7 +3,7 @@
   "version": "1.6.8",
   "private": true,
   "dependencies": {
-    "antd": "^5.0.0",
+    "antd": "^5.0.1",
     "immer": "^9.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,10 +35,11 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.28.0", 
-    "eslint-plugin-react": "^7.31.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3"
+    "@testing-library/user-event": "^14.4.3",
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.0"
   }
 }
