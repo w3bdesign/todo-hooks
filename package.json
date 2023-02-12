@@ -40,6 +40,6 @@
     "@testing-library/user-event": "^14.4.3",
     "eslint": "^8.34.0",
     "eslint-plugin-react": "^7.31.11",
-    "prettier": "^2.8.0"
+    "prettier": "^2.8.4"
   }
 }
