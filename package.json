@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^5.2.0",
-    "immer": "^9.0.16",
+    "immer": "^9.0.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
