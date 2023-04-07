@@ -6,6 +6,14 @@ import { Title } from "../../components/Title/Title.component";
 
 export const FORM_COLUMNS = [
   {
+    title: "Timestamp",
+    dataIndex: "timestamp",
+    key: "timestamp",
+    render: () => {
+      return new Date().toISOString().slice(0, 10);
+    },
+  },
+  {
     title: "Title",
     dataIndex: "title",
     key: "title",
